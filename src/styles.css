@@ -1,0 +1,134 @@
+@import "/assets/css/materialize.css";
+@import "/assets/css/bootstrap.css";
+@import "/assets/css/style.css";
+@import "/assets/css/style-mob.css";
+
+.h2-hero{
+    background: url('assets/images/testbg1.jpg');
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: bottom, center;
+    padding: 56px 0px 100px 0px;
+    position: relative;
+    overflow: hidden;
+}
+.option{
+    background-color:#cadaee;
+    font-size:20px;
+    padding:10px;
+    margin:3px;
+}
+.option label{
+    font-weight:normal;
+}
+    #quiz .options input[type=checkbox] {
+        background-color:#eee;
+        border:1px solid #ccc;
+        height:22px;
+        width:22px;
+    }
+
+div.review{
+    text-align:center;
+}
+div.review > div {
+    cursor:pointer;
+}
+
+.loader{
+  height:150px;
+  width:150px;
+  top:0;
+  bottom: 0;
+  left:0;
+  right:0;
+  margin: auto;
+  position: absolute;
+}
+.loader-img{
+  height:150px;
+  width:150px;
+}
+
+.answered {
+    background-color: #27a59a;
+    border: 1px solid #158e83;
+    margin: 2px 0;
+    padding: 6px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: white;
+}
+
+.not-answered {
+    background-color:#ffcccc;
+    border:1px solid #eeaaaa;
+    margin: 2px 0;
+    padding: 6px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.result-question{
+    background-color:#eee;
+    margin:4px;
+    padding:6px;
+}
+a {
+  border:none;
+  outline: 0px!important;
+}
+
+.text-theme-light{
+  color: #a93668;
+}
+
+.text-theme-dark{
+  color: #3c3b5a;
+}
+
+.p-10{
+  padding: 1%;
+}
+.f15{
+  font-size: 17px!important;
+}
+.no-mt{
+  margin-top:0 !important;
+  margin-bottom: 20px;
+}
+bg{
+  background-color: #e3e8ea!important;
+}
+/* Create Quiz Styles */
+/* .create-quiz .question {
+    text-align:left;
+}
+.create-quiz input[type=text]{
+    border:1px solid #ddd;
+    width:95%;
+}
+.create-quiz .tb-quiz-name{
+    background-color:#ccffcc;
+    text-align:center;
+}
+
+.create-quiz .tb-desc{
+    background-color:#fff;
+}
+
+.create-quiz .options > div{
+    margin-left:20px;
+}
+.create-quiz .options input[type=checkbox]{
+    border: 1px solid #262626;
+    display: inline-block;
+    height:20px;
+    margin-top:10px;
+    margin-bottom:0;
+    padding:0;
+    width:20px;
+    -webkit-appearance:checkbox;
+  } */

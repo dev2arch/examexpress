@@ -1,0 +1,128 @@
+<!-- PRICING SECTION -->
+<app-banner></app-banner>
+<section id="pricing-table">
+    <div class="container">
+        <div class="row">
+            <div class="pricing">
+                <div class="col-md-3 col-sm-12 col-xs-12">
+                    <div class="pricing-table">
+                        <div class="pricing-header">
+                            <p class="pricing-title">Yearly Pass</p>
+                            <p class="pricing-rate"><sup>Rs</sup> 100 </p>
+                            <a data-toggle="modal" data-target="#modal1" class="btn btn-custom">Buy Pass</a>
+                        </div>
+
+                        <div class="pricing-list">
+                            <ul>
+                                <li><i class="fa fa-envelope"></i>1,000 messages</li>
+                                <li><i class="fa fa-signal"></i><span>limited</span> data</li>
+                                <li><i class="fa fa-user"></i><span>limited</span> users</li>
+                                <li><i class="fa fa-smile-o"></i>first 10 day free</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-12 col-xs-12">
+                    <div class="pricing-table">
+                        <div class="pricing-header">
+                            <p class="pricing-title">4 Month Pass</p>
+                            <p class="pricing-rate"><sup>Rs</sup> 200 </p>
+                            <a  data-toggle="modal" data-target="#modal1" class="btn btn-custom">Buy Pass</a>
+                        </div>
+
+                        <div class="pricing-list">
+                            <ul>
+                                <li><i class="fa fa-envelope"></i>10,000 messages</li>
+                                <li><i class="fa fa-signal"></i><span>unlimited</span> data</li>
+                                <li><i class="fa fa-user"></i><span>unlimited</span> users</li>
+                                <li><i class="fa fa-smile-o"></i>first 10 day free</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-12 col-xs-12">
+                    <div class="pricing-table">
+                        <div class="pricing-header">
+                            <p class="pricing-title">Monthly Pass</p>
+                            <p class="pricing-rate"><sup>Rs</sup> 300 </p>
+                            <a data-toggle="modal" data-target="#modal1" class="btn btn-custom">Buy Pass</a>
+                        </div>
+
+                        <div class="pricing-list">
+                            <ul>
+                                <li><i class="fa fa-envelope"></i>10,0000 messages</li>
+                                <li><i class="fa fa-signal"></i><span>unlimited</span> data</li>
+                                <li><i class="fa fa-user"></i><span>unlimited</span> users</li>
+                                <li><i class="fa fa-smile-o"></i>first 10 day free</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-12 col-xs-12">
+                    <div class="pricing-table">
+                        <div class="pricing-header">
+                            <p class="pricing-title">10 Days Pass</p>
+                            <p class="pricing-rate"><sup>Rs</sup> 500 </p>
+                            <a data-toggle="modal" data-target="#modal1" class="btn btn-custom">Buy Pass</a>
+                        </div>
+
+                        <div class="pricing-list">
+                            <ul>
+                                <li><i class="fa fa-envelope"></i>10,0000 messages</li>
+                                <li><i class="fa fa-signal"></i><span>unlimited</span> data</li>
+                                <li><i class="fa fa-user"></i><span>unlimited</span> users</li>
+                                <li><i class="fa fa-smile-o"></i>first 10 day free</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- PRICING SECTION END -->
+<section class="pop-cour">
+    <div class="container com-sp pad-bot-70">
+        <div class="row">
+            <div class="con-title">
+                <h2>{{category}} <span>Tests</span></h2>
+                <p>Fusce id sem at ligula laoreet hendrerit venenatis sed purus. Ut pellentesque maximus lacus, nec pharetra augue.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-6" *ngFor="let test of testsData">
+                    <!--POPULAR COURSES-->
+                    <div class="home-top-cour" *ngIf="test.active">
+                        <!--POPULAR COURSES IMAGE-->
+                        <div class="col-md-3"> <img src="assets/images/course/sm-1.jpg" alt=""> </div>
+                        <!--POPULAR COURSES: CONTENT-->
+                        <div class="col-md-9 home-top-cour-desc">
+                            <a href="course-details.html">
+                                <h3>{{test.name}}</h3>
+                            </a>
+                            <h4>{{test.category}} / {{test.subCategory}}</h4>
+                            <p>{{test.description}}</p> <span class="home-top-cour-rat">4.2</span>
+                            <div class="hom-list-share">
+                                <ul>
+                                  <li *ngIf="test.type === 'free'">
+                                    <a [routerLink]="['/test']"
+                                       [queryParams]="{mode: 'liveTest'}"
+                                       fragment = "start"><i class="fa fa-bar-chart" aria-hidden="true"></i>Take Test</a>
+                                  </li>
+                                  <li *ngIf="test.type === 'premium'"><a href="course-details.html"><i class="fa fa-bar-chart" aria-hidden="true"></i>Buy Pass</a> </li>
+                                    <li><a href="course-details.html"><i class="fa fa-eye" aria-hidden="true"></i>{{test.type}}e</a> </li>
+                                    <li><a href="course-details.html"><i class="fa fa-share-alt" aria-hidden="true"></i> 570</a> </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

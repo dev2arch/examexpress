@@ -1,0 +1,132 @@
+<!-- MOBILE MENU -->
+<section>
+    <div class="ed-mob-menu" id="mob-menu">
+        <div class="ed-mob-menu-con">
+            <div class="ed-mm-left">
+                <div class="wed-logo">
+                    <a routerLink="/home"><img src={{logo}} alt="" />
+        </a>
+                </div>
+            </div>
+            <div class="ed-mm-right">
+                <div class="ed-mm-menu">
+                    <a  class="ed-micon" (click)="openMobileMenu('open')"><i class="fa fa-bars"></i></a>
+                    <div id="mobileMenu" class="ed-mm-inn">
+                        <a (click)="openMobileMenu('close')"class="ed-mi-close"><i class="fa fa-times"></i></a>
+                        <ul>
+                            <li *ngFor='let menu of menuObj.menu'><a routerLink = {{menu.link}} >{{menu.name}}</a></li>
+                        </ul>
+                        <h4>User Account</h4>
+                        <ul *ngIf="loggedIn === true">
+                            <li><a href="#!" data-toggle="modal" (click)="logOut()">Sign Out</a></li>
+                            <!--<li><a href="#!" data-toggle="modal" data-target="#modal2">Register</a></li>-->
+                        </ul>
+                      <ul *ngIf="loggedIn === false">
+                        <li><a href="#!" data-toggle="modal" data-target="#modal1">Sign In</a></li>
+                        <li><a href="#!" data-toggle="modal" data-target="#modal2">Register</a></li>
+                      </ul>
+                        <h4>User Profile</h4>
+                        <ul>
+                            <li><a href="dashboard.html">User profile</a></li>
+                            <li><a href="db-courses.html">Courses</a></li>
+                            <li><a href="db-exams.html">Exams</a></li>
+                            <li><a href="db-profile.html">Prfile</a></li>
+                            <li><a href="db-time-line.html">Time line</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--HEADER SECTION-->
+<section>
+    <!-- TOP BAR -->
+    <div class="ed-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="ed-com-t1-left">
+                        <ul>
+                            <li><a href="#">Contact: Lake Road, Suite 180 Greater Noida, India</a>
+                            </li>
+                            <li><a href="#">Phone: +101-1231-1231</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="ed-com-t1-right">
+                        <ul *ngIf="role === 'student'">
+                            <li><a routerLink="['home']" data-toggle="modal" (click)="logOut()">Log Out</a>
+                            </li>
+                            <!--<li><a href="#!" data-toggle="modal" data-target="#modal2">Sign Up</a>-->
+                            <!--</li>-->
+                        </ul>
+                      <ul *ngIf="role === null">
+                        <li><a href="#!" data-toggle="modal" data-target="#modal1" #open id="open">Sign In</a>
+                        </li>
+                        <li><a href="#!" data-toggle="modal" data-target="#modal2">Sign Up</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="ed-com-t1-social">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOGO AND MENU SECTION -->
+    <div class="top-logo" data-spy="affix" data-offset-top="250" *ngIf="role != 'admin'">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="wed-logo">
+                      <a routerLink="/home"><img src="/assets/images/logo.png" alt="" />
+                        </a>
+                    </div>
+                    <div class="main-menu" *ngIf="istest.mode != 'liveTest'">
+                        <ul>
+                            <li *ngFor='let menu of menuObj.menu'><a routerLink = {{menu.link}} >{{menu.name}}</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="all-drop-down-menu"></div>
+              </div>
+        </div>
+    </div>
+  <div class="container-fluid sb1" *ngIf="role === 'admin'">
+    <div class="row">
+      <!--== LOGO ==-->
+      <div class="col-md-2 col-sm-3 col-xs-6 sb1-1">
+        <a href="#" class="btn-close-menu"><i class="fa fa-times" aria-hidden="true"></i></a>
+        <a href="#" class="atab-menu"><i class="fa fa-bars tab-menu" aria-hidden="true"></i></a>
+        <a href="index.html" class="logo"><img src="/assets/images/logo.png" alt="" />
+        </a>
+      </div>
+      <!--== MY ACCCOUNT ==-->
+      <div class="col-md-2 col-sm-3 col-xs-6 right text-right p-10">
+        <!-- Dropdown Trigger -->
+        <li><a routerLink="['home']" data-toggle="modal" (click)="logOut()"> <i class="fa fa-sign-out text-theme-light" aria-hidden="true"></i></a></li>
+
+        <!-- Dropdown Structure -->
+        <ul id='top-menu' class='dropdown-content top-menu-sty'>
+          <li><a href="admin-panel-setting.html" class="waves-effect"><i class="fa fa-cogs" aria-hidden="true"></i>Admin Setting</a>
+          </li>
+          <li class="divider"></li>
+          <li><a class="ho-dr-con-last waves-effect" (click)="logOut()"><i class="fa fa-sign-in" aria-hidden="true"></i> Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!--END HEADER SECTION-->

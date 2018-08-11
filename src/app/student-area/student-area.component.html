@@ -1,0 +1,48 @@
+<section>
+  <div class="pro-cover">
+  </div>
+  <div class="pro-menu">
+    <div class="container">
+      <div class="col-md-9 col-md-offset-3">
+        <ul>
+          <li><a routerLink="/student-area/dashboard" routerLinkActive="pro-act">My Dashboard</a></li>
+          <li><a routerLink="/student-area/profile" routerLinkActive="pro-act">Profile</a></li>
+          <li><a routerLink="/student-area/tests" routerLinkActive="pro-act">Tests</a></li>
+          <!--<li><a href="db-exams.html">Exams</a></li>-->
+          <!--<li><a href="db-time-line.html">Time Line</a></li>-->
+          <!--<li><a href="#">Entry</a></li>-->
+          <!--<li><a href="#">Notifications</a></li>-->
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="stu-db">
+    <div class="container pg-inn">
+      <div class="col-md-3">
+        <div class="pro-user">
+          <img src="../../assets/images/user.jpg" alt="user">
+        </div>
+        <div class="pro-user-bio">
+          <ul>
+            <li>
+              <h4>Emily Jessica</h4>
+            </li>
+            <li>Student Id: ST17241</li>
+            <li><a href="#!"><i class="fa fa-facebook"></i> Facebook: my sample</a></li>
+            <li><a href="#!"><i class="fa fa-google-plus"></i> Google: my sample</a></li>
+            <li><a href="#!"><i class="fa fa-twitter"></i> Twitter: my sample</a></li>
+          </ul>
+        </div>
+      </div>
+      <!--Router Outlet-->
+      <div class="col-md-9">
+      <router-outlet></router-outlet>
+      </div>
+<!--<app-student-dashboard></app-student-dashboard>-->
+<!--<app-my-profile></app-my-profile>-->
+      <!--<app-student-exams></app-student-exams>-->
+      <!--Router Outlet end-->
+
+    </div>
+  </div>
+</section>
