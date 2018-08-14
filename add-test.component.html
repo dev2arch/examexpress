@@ -1,0 +1,285 @@
+<div class="sb2-2-3">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box-inn-sp admin-form">
+        <div class="sb2-2-add-blog sb2-2-1">
+          <h2>Add New Course</h2>
+          <ul class="nav nav-tabs tab-list">
+            <li class="active"><a data-toggle="tab" href="#testdesc" aria-expanded="true"><i class="fa fa-info" aria-hidden="true"></i> <span>Test Detail</span></a>
+            </li>
+            <li class=""><a data-toggle="tab" href="#questions" aria-expanded="false"><i class="fa fa-bed" aria-hidden="true"></i> <span>Question</span></a>
+            </li>
+            <!--<li class=""><a data-toggle="tab" href="#menu2" aria-expanded="false"><i class="fa fa-picture-o" aria-hidden="true"></i> <span>Banner Image</span></a>-->
+            <!--</li>-->
+            <!--<li class=""><a data-toggle="tab" href="#menu3" aria-expanded="false"><i class="fa fa-facebook" aria-hidden="true"></i> <span>Time table</span></a>-->
+            <!--</li>-->
+            <!--<li class=""><a data-toggle="tab" href="#menu4" aria-expanded="false"><i class="fa fa-phone" aria-hidden="true"></i> <span>Contact Info</span></a>-->
+            <!--</li>-->
+          </ul>
+
+          <div class="tab-content">
+            <div id="testdesc" class="tab-pane fade active in">
+              <div class="box-inn-sp">
+                <div class="inn-title">
+                  <h4>Test Details</h4>
+                </div>
+                <div class="bor">
+                  <form (ngSubmit)="addTestDetails(testDetails)" #testDetails="ngForm">
+                    <div class="row">
+                      <div class="input-field col s12">
+                        <input id="test-category" name="test-category" type="text" class="validate" required ngModel>
+                        <label for="test-category" class="">Test Category</label>
+                      </div>
+                      <div class="input-field col s12">
+                        <input id="test-subcategory" name="test-subcategory" type="text" class="validate" required ngModel>
+                        <label for="test-subcategory">Test SubCategory</label>
+                      </div>
+                      <div class="input-field col s12">
+                        <input id="test-code" name="test-code" type="text" class="validate" required ngModel>
+                        <label for="test-code">Test Code</label>
+                      </div>
+                      <div class="input-field col s12">
+                        <input id="test-name" name="test-name" type="text" class="validate" required ngModel>
+                        <label for="test-name">Test Name</label>
+                      </div>
+                      <div class="input-field col s12">
+                        <input id="test-subject" name="test-subject" type="text" class="validate" required ngModel>
+                        <label for="test-subject">Test Subject</label>
+                      </div>
+                      <div class="input-field col s12">
+                        <input id="test-startDate" name="test-startDate" type="text" class="validate" required ngModel>
+                        <label for="test-startDate">StartDate (mm/dd/yyyy)</label>
+                      </div>
+                      <div class="input-field col s12">
+                        <input id="test-endDate" name="test-endDate" type="text" class="validate" required ngModel>
+                        <label for="test-endDate">EndDate (mm/dd/yyyy)</label>
+                      </div>
+                      <div class="input-field col s12">
+                        <input id="test-duration" name="test-duration" type="text" class="validate" required ngModel>
+                        <label for="test-duration">Duration In Minutes</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s12">
+                        <textarea class="materialize-textarea" name="test-desc" ngModel></textarea>
+                        <label>Test Descriptions:</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s12">
+                        <i class="waves-effect waves-light btn-large waves-input-wrapper" style=""><input type="submit" class="waves-button-input"></i>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div id="questions" class="tab-pane fade">
+              <div class="inn-title">
+                <h4>Requirements, feese, student profile and how to apply</h4>
+                <p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>
+              </div>
+              <div class="bor ad-cou-deta-h4">
+                <form>
+                  <h4>Requirements:</h4>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <textarea class="materialize-textarea"></textarea>
+                      <label>Course Descriptions:</label>
+                    </div>
+                  </div>
+                  <h4>Feese:</h4>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input type="number" class="validate" required>
+                      <label>1'st terms feese</label>
+                    </div>
+                    <div class="input-field col s12">
+                      <input type="number" class="validate" required>
+                      <label>2'nd terms feese</label>
+                    </div>
+                    <div class="input-field col s12">
+                      <input type="number" class="validate" required>
+                      <label>3'rd terms feese</label>
+                    </div>
+                    <div class="input-field col s12">
+                      <textarea class="materialize-textarea"></textarea>
+                      <label>Price Descriptions:</label>
+                    </div>
+                  </div>
+                  <h4>Student Profile:</h4>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <textarea class="materialize-textarea"></textarea>
+                      <label>Student Profile Descriptions:</label>
+                    </div>
+                  </div>
+                  <h4>How to apply this course:</h4>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input type="text" class="validate" required>
+                      <label>Step 1 Descriptions:</label>
+                    </div>
+                    <div class="input-field col s12">
+                      <input type="text" class="validate" required>
+                      <label>Step 2 Descriptions:</label>
+                    </div>
+                    <div class="input-field col s12">
+                      <input type="text" class="validate" required>
+                      <label>Step 3 Descriptions:</label>
+                    </div>
+                    <div class="input-field col s12">
+                      <input type="text" class="validate" required>
+                      <label>Step 4 Descriptions:</label>
+                    </div>
+                    <div class="input-field col s12">
+                      <input type="text" class="validate" required>
+                      <label>Step 5 Descriptions:</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <i class="waves-effect waves-light btn-large waves-input-wrapper" style=""><input type="submit" class="waves-button-input" value="Submit"></i>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!--<div id="menu2" class="tab-pane fade">-->
+              <!--<div class="inn-title">-->
+                <!--<h4>Photo Gallery</h4>-->
+                <!--<p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>-->
+              <!--</div>-->
+              <!--<div class="bor">-->
+                <!--<form action="#">-->
+                  <!--<div class="file-field input-field">-->
+                    <!--<div class="btn admin-upload-btn">-->
+                      <!--<span>File</span>-->
+                      <!--<input type="file" multiple="">-->
+                    <!--</div>-->
+                    <!--<div class="file-path-wrapper">-->
+                      <!--<input class="file-path validate" type="text" placeholder="Upload course banner image">-->
+                    <!--</div>-->
+                  <!--</div>-->
+                  <!--<div class="row">-->
+                    <!--<div class="input-field col s12">-->
+                      <!--<i class="waves-effect waves-light btn-large waves-input-wrapper" style=""><input type="submit" class="waves-button-input" value="Upload"></i>-->
+                    <!--</div>-->
+                  <!--</div>-->
+
+                <!--</form>-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div id="menu3" class="tab-pane fade">-->
+              <!--<div class="inn-title">-->
+                <!--<h4>Time table</h4>-->
+                <!--<p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>-->
+              <!--</div>-->
+              <!--<div class="bor ad-cou-deta-h4">-->
+                <!--<form>-->
+                  <!--<h4>1st semester:</h4>-->
+                  <!--<div class="row">-->
+                    <!--<div class="input-field col s12">-->
+                      <!--<input type="text" class="validate" required>-->
+                      <!--<label>Title:</label>-->
+                    <!--</div>-->
+                    <!--<div class="input-field col s12">-->
+                      <!--<textarea class="materialize-textarea"></textarea>-->
+                      <!--<label>Descriptions:</label>-->
+                    <!--</div>-->
+                  <!--</div>-->
+                  <!--<h4>2nd semester:</h4>-->
+                  <!--<div class="row">-->
+                    <!--<div class="input-field col s12">-->
+                      <!--<input type="text" class="validate" required>-->
+                      <!--<label>Title:</label>-->
+                    <!--</div>-->
+                    <!--<div class="input-field col s12">-->
+                      <!--<textarea class="materialize-textarea"></textarea>-->
+                      <!--<label>Descriptions:</label>-->
+                    <!--</div>-->
+                  <!--</div>-->
+                  <!--<h4>3rd semester:</h4>-->
+                  <!--<div class="row">-->
+                    <!--<div class="input-field col s12">-->
+                      <!--<input type="text" class="validate" required>-->
+                      <!--<label>Title:</label>-->
+                    <!--</div>-->
+                    <!--<div class="input-field col s12">-->
+                      <!--<textarea class="materialize-textarea"></textarea>-->
+                      <!--<label>Descriptions:</label>-->
+                    <!--</div>-->
+                  <!--</div>-->
+                  <!--<h4>4th semester:</h4>-->
+                  <!--<div class="row">-->
+                    <!--<div class="input-field col s12">-->
+                      <!--<input type="text" class="validate" required>-->
+                      <!--<label>Title:</label>-->
+                    <!--</div>-->
+                    <!--<div class="input-field col s12">-->
+                      <!--<textarea class="materialize-textarea"></textarea>-->
+                      <!--<label>Descriptions:</label>-->
+                    <!--</div>-->
+                  <!--</div>-->
+
+                  <!--<div class="row">-->
+                    <!--<div class="input-field col s12">-->
+                      <!--<i class="waves-effect waves-light btn-large waves-input-wrapper" style=""><input type="submit" class="waves-button-input" value="Submit"></i>-->
+                    <!--</div>-->
+                  <!--</div>-->
+                <!--</form>-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div id="menu4" class="tab-pane fade">-->
+              <!--<div class="inn-title">-->
+                <!--<h4>Contact Info</h4>-->
+                <!--<p>Airtport Hotels The Right Way To Start A Short Break Holiday</p>-->
+              <!--</div>-->
+              <!--<div class="bor">-->
+                <!--<form>-->
+                  <!--<div class="row">-->
+                    <!--<div class="input-field col s6">-->
+                      <!--<input id="t5-n1" type="text" class="validate">-->
+                      <!--<label for="t5-n1">Contact Name</label>-->
+                    <!--</div>-->
+                    <!--<div class="input-field col s6">-->
+                      <!--<input id="t5-n2" type="text" class="validate">-->
+                      <!--<label for="t5-n2">Alter Contact Name</label>-->
+                    <!--</div>-->
+                  <!--</div>-->
+                  <!--<div class="row">-->
+                    <!--<div class="input-field col s6">-->
+                      <!--<input id="t5-n3" type="number" class="validate">-->
+                      <!--<label for="t5-n3">Phone</label>-->
+                    <!--</div>-->
+                    <!--<div class="input-field col s6">-->
+                      <!--<input id="t5-n4" type="number" class="validate">-->
+                      <!--<label for="t5-n4">Mobile</label>-->
+                    <!--</div>-->
+                  <!--</div>-->
+                  <!--<div class="row">-->
+                    <!--<div class="input-field col s12">-->
+                      <!--<input id="t5-n5" type="email" class="validate">-->
+                      <!--<label for="t5-n5">Email</label>-->
+                    <!--</div>-->
+                  <!--</div>-->
+                  <!--<div class="row">-->
+                    <!--<div class="input-field col s12">-->
+                      <!--<textarea id="t5-n6" class="materialize-textarea"></textarea>-->
+                      <!--<label for="t5-n6">Listing Descriptions:</label>-->
+                    <!--</div>-->
+                  <!--</div>-->
+                  <!--<div class="row">-->
+                    <!--<div class="input-field col s12">-->
+                      <!--<i class="waves-effect waves-light btn-large waves-input-wrapper" style=""><input type="submit" class="waves-button-input" value="Upload"></i>-->
+                    <!--</div>-->
+                  <!--</div>-->
+                <!--</form>-->
+              <!--</div>-->
+            <!--</div>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
