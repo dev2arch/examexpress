@@ -38,7 +38,6 @@
         return this.http.post(url, (dataToPost), {headers: headers})
         .map(
             (response: Response) => { this.data = response, this.data.token = response.headers.get('Authorization')
-            console.log(response.ok)
             if (response.headers.get('Authorization')) {
             this.token = response.headers.get('Authorization');
               if (email === 'admin') {
