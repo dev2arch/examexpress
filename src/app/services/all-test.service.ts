@@ -18,13 +18,12 @@ export class AllTestService {
           const data = response.json()
           var allCat = []
           for (var i in data) {
-            data[i].type = 'free'
             console.log(data[i].category)
             if (allCat.indexOf(data[i].category) < 0) {
               allCat.push(data[i].category)
             }
           }
-          data.category  = allCat;
+          data.category  = allCat
           return data;
         }
       )
@@ -36,10 +35,6 @@ export class AllTestService {
       .map(
         (response: Response) => {
           const data = response.json()
-          for (var i in data){
-
-            data[i].type = 'free'
-          }
           return data;
         }
       )
