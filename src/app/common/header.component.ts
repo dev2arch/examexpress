@@ -30,10 +30,11 @@ export class HeaderComponent implements OnInit {
                 ]
              },
              {name: 'Blog', link: 'Blog', sub: null},
-             {name: 'Admin', link: 'admin-area', sub: null},
-             {name: 'Student', link: 'student-area', sub: null},
+             // {name: 'Admin', link: 'admin-area', sub: null},
+
              {name: 'AllCourses', link: 'Blog', sub: null},
              {name: 'Contact-Us', link: 'contact-us', sub: null},
+            {name: 'My Profile', link: 'student-area', sub: null},
 
         ]
     }}
