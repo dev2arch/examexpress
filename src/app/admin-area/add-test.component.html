@@ -83,71 +83,76 @@
               </div>
             </div>
             <div id="questions" class="tab-pane fade">
-              <div *ngIf="detaileSubmitted">
+              <!--<div *ngIf="detaileSubmitted">  -->
+                <div>
                 <div class="inn-title">
                   <h4>Submit All Questions with their answers</h4>
                 </div>
                 <div class="bor ad-cou-deta-h4">
-                  <form>
-                    <h4>Requirements:</h4>
+                  <form (ngSubmit)="addTestQuestions(testQuestions)" #testQuestions="ngForm">
+                    <!--<h4>Requirements:</h4>-->
                     <div class="row">
+                      <!--<div class="input-field col s12">-->
+                        <!--<textarea class="materialize-textarea"></textarea>-->
+                        <!--<label>Course Descriptions:</label>-->
+                      <!--</div>-->
+                    <!--</div>-->
+                    <!--<h4>Feese:</h4>-->
+                    <!--<div class="row">-->
+                      <!--<div class="input-field col s12">-->
+                        <!--<input type="number" class="validate" required>-->
+                        <!--<label>1'st terms feese</label>-->
+                      <!--</div>-->
+                      <!--<div class="input-field col s12">-->
+                        <!--<input type="number" class="validate" required>-->
+                        <!--<label>2'nd terms feese</label>-->
+                      <!--</div>-->
+                      <!--<div class="input-field col s12">-->
+                        <!--<input type="number" class="validate" required>-->
+                        <!--<label>3'rd terms feese</label>-->
+                      <!--</div>-->
+                      <!--<div class="input-field col s12">-->
+                        <!--<textarea class="materialize-textarea"></textarea>-->
+                        <!--<label>Price Descriptions:</label>-->
+                      <!--</div>-->
+                    <!--</div>-->
+                    <!--<h4>Student Profile:</h4>-->
+                    <!--<div class="row">-->
+                      <!--<div class="input-field col s12">-->
+                        <!--<textarea class="materialize-textarea"></textarea>-->
+                        <!--<label>Student Profile Descriptions:</label>-->
+                      <!--</div>-->
+                    <!--</div>-->
+                    <!--<h4>How to apply this course:</h4>-->
+                    <!--<div class="row">-->
+                      <!--<div class="input-field col s12">-->
+                        <!--<input type="text" class="validate" required>-->
+                        <!--<label>Step 1 Descriptions:</label>-->
+                      <!--</div>-->
+                      <!--<div class="input-field col s12">-->
+                        <!--<input type="text" class="validate" required>-->
+                        <!--<label>Step 2 Descriptions:</label>-->
+                      <!--</div>-->
+                      <!--<div class="input-field col s12">-->
+                        <!--<input type="text" class="validate" required>-->
+                        <!--<label>Step 3 Descriptions:</label>-->
+                      <!--</div>-->
+                      <!--<div class="input-field col s12">-->
+                        <!--<input type="text" class="validate" required>-->
+                        <!--<label>Step 4 Descriptions:</label>-->
+                      <!--</div>-->
+                      <!--<div class="input-field col s12">-->
+                        <!--<input type="text" class="validate" required>-->
+                        <!--<label>Step 5 Descriptions:</label>-->
+                      <!--</div>-->
                       <div class="input-field col s12">
-                        <textarea class="materialize-textarea"></textarea>
-                        <label>Course Descriptions:</label>
+                      <input type="file" (change)="fileChangetemp($event)" placeholder="Upload file" accept=".pdf,.doc,.docx,.json">
+                        <label>Uplaod File:</label>
                       </div>
                     </div>
-                    <h4>Feese:</h4>
                     <div class="row">
                       <div class="input-field col s12">
-                        <input type="number" class="validate" required>
-                        <label>1'st terms feese</label>
-                      </div>
-                      <div class="input-field col s12">
-                        <input type="number" class="validate" required>
-                        <label>2'nd terms feese</label>
-                      </div>
-                      <div class="input-field col s12">
-                        <input type="number" class="validate" required>
-                        <label>3'rd terms feese</label>
-                      </div>
-                      <div class="input-field col s12">
-                        <textarea class="materialize-textarea"></textarea>
-                        <label>Price Descriptions:</label>
-                      </div>
-                    </div>
-                    <h4>Student Profile:</h4>
-                    <div class="row">
-                      <div class="input-field col s12">
-                        <textarea class="materialize-textarea"></textarea>
-                        <label>Student Profile Descriptions:</label>
-                      </div>
-                    </div>
-                    <h4>How to apply this course:</h4>
-                    <div class="row">
-                      <div class="input-field col s12">
-                        <input type="text" class="validate" required>
-                        <label>Step 1 Descriptions:</label>
-                      </div>
-                      <div class="input-field col s12">
-                        <input type="text" class="validate" required>
-                        <label>Step 2 Descriptions:</label>
-                      </div>
-                      <div class="input-field col s12">
-                        <input type="text" class="validate" required>
-                        <label>Step 3 Descriptions:</label>
-                      </div>
-                      <div class="input-field col s12">
-                        <input type="text" class="validate" required>
-                        <label>Step 4 Descriptions:</label>
-                      </div>
-                      <div class="input-field col s12">
-                        <input type="text" class="validate" required>
-                        <label>Step 5 Descriptions:</label>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="input-field col s12">
-                        <i class="waves-effect waves-light btn-large waves-input-wrapper" style=""><input type="submit" class="waves-button-input" value="Submit"></i>
+                        <i class="waves-effect waves-light btn-large waves-input-wrapper" style=""><input type="submit" class="waves-button-input"></i>
                       </div>
                     </div>
                   </form>
