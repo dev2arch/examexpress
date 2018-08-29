@@ -74,48 +74,12 @@ export class AddTestComponent implements OnInit {
 
   }
    fileChangetemp(event) {
-     this.testCode = 'AIPMT005'
+     this.testCode = 'AIPMT002'
     this.testService.addQuestionstemp(event, this.testCode)
       .subscribe(
         (res) => this.quesRes = res,
         (err) => console.log(err)
       )
-  }
-  fileChange(text) {
-    text = JSON.parse(text)
-    this.testCode = 'AIPMT005'
-    alert("caleed")
-     console.log(text)
-    // let fileList: FileList = event.target.files;
-    // console.log(fileList[0])
-    this.testService.addQuestions(text, this.testCode)
-      .subscribe(
-        (res) => this.quesRes = res,
-        (err) => console.log(err)
-      )
-  }
-  openFile(event) {
-    var text;
-    let input = event.target;
-    for (var index = 0; index < input.files.length; index++) {
-      let reader = new FileReader();
-      (reader.readAsText(input.files[index]));
-      reader.onload = () => {
-        // this 'text' is the content of the file
-        text = reader.result;
-        console.log(JSON.parse(text))
-        this.fileChange(text)
-      }
-
-
-    }
-  }
-  public addTestQuestions(testQuestions: NgForm) {
-    this.testCode = 'AIPMT005'
-    this.testService.addQuestions(testQuestions, this.testCode).subscribe(
-      (res) => this.quesRes = res,
-      (err) => console.log(err)
-    )
   }
 
 }
