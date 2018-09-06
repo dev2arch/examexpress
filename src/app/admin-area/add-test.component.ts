@@ -74,7 +74,7 @@ export class AddTestComponent implements OnInit {
 
   }
    fileChangetemp(event) {
-     this.testCode = 'AIPMT002'
+     // this.testCode = testDetails.value.testCode
     this.testService.addQuestionstemp(event, this.testCode)
       .subscribe(
         (res) => this.quesRes = res,
