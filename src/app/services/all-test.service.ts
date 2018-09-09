@@ -63,10 +63,7 @@ export class AllTestService {
       let formData: FormData = new FormData();
        formData.append('file', file, file.name);
       let headers = new Headers();
-      /** In Angular 5, including the header Content-Type can invalidate your request */
-      // headers.append('Content-Type', 'multipart/form-data');
       headers.append('Authorization', AppConfig.CURR_USER.token);
-      // let options = new RequestOptions({ headers: headers });
       return this.http.post(url, formData, {headers})
         .map(res =>{res.json(),console.log(res)})
         .catch(error => Observable.throw(error))
