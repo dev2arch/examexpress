@@ -49,7 +49,7 @@ export class QuizComponent implements OnInit {
     this.quizService.get(quizName)
     .subscribe(res => {
       this.quiz = new Quiz(res);
-      this.pager.count = this.quiz.questions.length;
+      this.pager.count = this.quiz.questions.length; console.log(this.quiz)
     });
   }
 
