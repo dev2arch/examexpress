@@ -60,7 +60,7 @@ export class AddTestComponent implements OnInit {
       startDate: testDetails.value.testStartDate,
       subCategory: testDetails.value.testSubcategory,
       subject: testDetails.value.testSubject,
-      testCode: testDetails.value.testCode,
+      id: testDetails.value.testCode,
       testDurationInMinutes: testDetails.value.testDuration,
       type: testDetails.value.testType
     }
