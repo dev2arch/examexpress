@@ -77,7 +77,7 @@ export class AddTestComponent implements OnInit {
     this.testService.addQuestionstemp(event, this.testCode)
       .subscribe(
         (res) => this.quesRes = res,
-        (err) => console.log("tserror>>>", err)
+        (err) => console.log("tserror>>", err)
       )
   }
 

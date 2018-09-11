@@ -1,0 +1,114 @@
+[
+{
+"name" : "This is question one",
+"questionType" :  { 
+"questionTypeCode" : "MCQ",
+"name" : "Multiple Choice Questions",
+"isActive" : true
+},
+"timeLimit" : "30",
+"isActive" : "true",
+"marks" : "5",
+"options" :  [ 
+{
+"name" : "option1",
+"isAnswer" : "false"
+},
+{
+"name" : "option2",
+"isAnswer" : "false"
+},
+{
+"name" : "option3",
+"isAnswer" : "true"
+},
+{
+"name" : "option4",
+"isAnswer" : "false"
+}
+]},
+{
+"name" : "This is question two",
+"questionType" :  { 
+"questionTypeCode" : "MCQ",
+"name" : "Multiple Choice Questions",
+"isActive" : true
+},
+"timeLimit" : "30",
+"isActive" : "true",
+"marks" : "5",
+"options" :  [ 
+{
+"name" : "option1",
+"isAnswer" : "false"
+},
+{
+"name" : "option2",
+"isAnswer" : "false"
+},
+{
+"name" : "option3",
+"isAnswer" : "true"
+},
+{
+"name" : "option4",
+"isAnswer" : "false"
+}
+]},
+{
+"name" : "This is question three",
+"questionType" :  { 
+"questionTypeCode" : "MCQ",
+"name" : "Multiple Choice Questions",
+"isActive" : true
+},
+"timeLimit" : "30",
+"isActive" : "true",
+"marks" : "5",
+"options" :  [ 
+{
+"name" : "option1",
+"isAnswer" : "false"
+},
+{
+"name" : "option2",
+"isAnswer" : "false"
+},
+{
+"name" : "option3",
+"isAnswer" : "true"
+},
+{
+"name" : "option4",
+"isAnswer" : "false"
+}
+]},
+{
+"name" : "This is question Four",
+"questionType" :  { 
+"questionTypeCode" : "MCQ",
+"name" : "Multiple Choice Questions",
+"isActive" : true
+},
+"timeLimit" : "30",
+"isActive" : "true",
+"marks" : "5",
+"options" :  [ 
+{
+"name" : "asd",
+"isAnswer" : "false"
+},
+{
+"name" : "efg",
+"isAnswer" : "false"
+},
+{
+"name" : "ikl",
+"isAnswer" : "false"
+},
+{
+"name" : "testing",
+"isAnswer" : "true"
+}
+]}
+]
