@@ -56,7 +56,8 @@ export class AllTestService {
       )
   }
   public addQuestionstemp(event, testCode) {
-    var url = AppConfig.API_ENDPOINT + '/quizzard/test/' + testCode +'/questions'
+    // var url = AppConfig.API_ENDPOINT + '/quizzard/test/' + testCode +'/questions'
+    var url = AppConfig.API_ENDPOINT + '/quizzard/test/' + "MED_01" +'/questions'
     let fileList: FileList = event.target.files;
     if (fileList.length > 0) {
       let file: File = fileList[0];
@@ -65,7 +66,7 @@ export class AllTestService {
       let headers = new Headers();
       headers.append('Authorization', AppConfig.CURR_USER.token);
       return this.http.post(url, formData, {headers})
-        .map(res =>{res.json(),console.log(res)})
+        .map(res => {res, console.log(res)})
         .catch(error => Observable.throw(error))
     }
   }
