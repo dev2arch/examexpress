@@ -4,6 +4,7 @@ export class Question {
     id: number;
     name: string;
     questionTypeId: number;
+    questionTypeCode: string;
     options: Option[];
     answered: boolean;
 
@@ -12,6 +13,7 @@ export class Question {
         this.id = data.id;
         this.name = data.name;
         this.questionTypeId = data.questionTypeId;
+        this.questionTypeCode = data.questionType.questionTypeCode;
         this.options = [];
         data.options.forEach(o => {
             this.options.push(new Option(o));

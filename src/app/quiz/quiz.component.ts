@@ -59,7 +59,7 @@ export class QuizComponent implements OnInit {
   }
 
   onSelect(question: Question, option: Option) {
-    if (question.questionTypeId === 1) {
+    if (question.questionTypeCode == 'MCQ') {
       question.options.forEach((x) => { if (x.id !== option.id) x.selected = false; });
     }
 
@@ -80,7 +80,8 @@ export class QuizComponent implements OnInit {
   };
 
   isCorrect(question: Question) {
-    return question.options.every(x => x.selected === x.isAnswer) ? 'correct' : 'wrong';
+ console.log(question.options)
+    return question.options.every(x => x.selected === x.answer) ? 'correct' : 'wrong';
   };
 
   onSubmit() {
@@ -88,7 +89,6 @@ export class QuizComponent implements OnInit {
     this.quiz.questions.forEach(x => answers.push({ 'QuizId': this.quiz.id, 'QuestionId': x.id, 'Answered': x.answered }));
 
     // Post your data to the server here. answers contains the questionId and the users' answer.
-    console.log(this.quiz.questions);
     this.mode = 'result';
   }
 }

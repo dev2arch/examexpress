@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import {Headers, Http} from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
+import {AppConfig} from "../app.config";
 
 @Injectable()
 export class QuizService {
@@ -9,7 +10,12 @@ export class QuizService {
   constructor(private http: Http) { }
 
   get(url: string) {
-    return this.http.get(url)
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization', AppConfig.CURR_USER.token);
+    console.log("quiz called")
+     return this.http.get("http://13.126.208.177:8080/quizzard/test/testing006?includeQuestions=true", {headers: headers})
+    // return this.http.get(url)
     .map(res => res.text().length > 0 ? res.json() : null);
   }
 

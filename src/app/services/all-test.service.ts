@@ -56,8 +56,8 @@ export class AllTestService {
       )
   }
   public addQuestionstemp(event, testCode) {
-    // var url = AppConfig.API_ENDPOINT + '/quizzard/test/' + testCode +'/questions'
-    var url = AppConfig.API_ENDPOINT + '/quizzard/test/' + "MED_01" +'/questions'
+    var url = AppConfig.API_ENDPOINT + '/quizzard/test/' + testCode +'/questions'
+    // var url = AppConfig.API_ENDPOINT + '/quizzard/test/' + "testing006" +'/questions'
     let fileList: FileList = event.target.files;
     if (fileList.length > 0) {
       let file: File = fileList[0];
