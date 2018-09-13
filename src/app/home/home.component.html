@@ -38,65 +38,6 @@
             </div>
             <div class="row">
                 <div class="ed-course">
-                    <!--<div class="col-md-3 col-sm-4 col-xs-6">-->
-                        <!--<div class="ed-course-in">-->
-                            <!--<a class="course-overlay" href="about.html">-->
-                                <!--<img src="assets/images/bgtest.jpg" alt="">-->
-                                <!--&lt;!&ndash; <span class="test-icon"><i class="fa fa-university" aria-hidden="true"></i></span> &ndash;&gt;-->
-                                  <!--<span>Academics</span>-->
-                            <!--</a>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="col-md-3 col-sm-4 col-xs-6">-->
-                        <!--<div class="ed-course-in">-->
-                            <!--<a class="course-overlay" href="admission.html">-->
-                              <!--<img src="assets/images/bgtest.jpg" alt="">-->
-                                <!--<span>Admission</span>-->
-                            <!--</a>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="col-md-3 col-sm-4 col-xs-6">-->
-                        <!--<div class="ed-course-in">-->
-                            <!--<a class="course-overlay" href="dashboard.html">-->
-                              <!--<img src="assets/images/bgtest.jpg" alt="">-->
-                                <!--<span>Students profile</span>-->
-                            <!--</a>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="col-md-3 col-sm-4 col-xs-6">-->
-                        <!--<div class="ed-course-in">-->
-                            <!--<a class="course-overlay" href=".html">-->
-                              <!--<img src="assets/images/bgtest.jpg" alt="">-->
-                                <!--<span>Research & Education</span>-->
-                            <!--</a>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="col-md-3 col-sm-4 col-xs-6">-->
-                        <!--<div class="ed-course-in">-->
-                            <!--<a class="course-overlay" href="all-courses.html">-->
-                                <!--<img src="assets/images/bgtest.jpg" alt="">-->
-                                <!--<span>Couse</span>-->
-                            <!--</a>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="col-md-3 col-sm-4 col-xs-6">-->
-                        <!--<div class="ed-course-in">-->
-                            <!--<a class="course-overlay" href="db-time-line.html">-->
-                                <!--<img src="assets/images/bgtest.jpg" alt="">-->
-                                <!--<span>Exam Time Line</span>-->
-                            <!--</a>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="col-md-3 col-sm-4 col-xs-6">-->
-                        <!--<div class="ed-course-in">-->
-                            <!--<a class="course-overlay" [routerLink]="['/test']"-->
-                            <!--[queryParams]="{mode: 'liveTest'}"-->
-                            <!--fragment = "start">-->
-                              <!--<img src="assets/images/bgtest.jpg" alt="">-->
-                                <!--<span>Seminar 2018</span>-->
-                            <!--</a>-->
-                        <!--</div>-->
-                    <!--</div>-->
                     <div class="col-md-3 col-sm-4 col-xs-6" *ngFor='let test of categories'>
                         <div class="ed-course-in">
                             <a class="course-overlay" routerLink="/cat/{{test}}">

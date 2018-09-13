@@ -17,10 +17,11 @@ import {AddTestComponent} from './admin-area/add-test.component';
 import {AllStudentsComponent} from './admin-area/all-students.component';
 import {AddStudentComponent} from './admin-area/add-student.component';
 import {AdminDashboardComponent} from './admin-area/admin-dashboard.component';
+import {CourseSubcatComponent} from "./category/course-subcat.component";
 
 
 const appRoutes: Routes = [
-  { path: 'test', component: QuizComponent, canActivate: [AuthGuardS] },
+  { path: 'test/:id', component: QuizComponent, canActivate: [AuthGuardS] },
   { path: 'home', component: HomeComponent },
   { path: 'student-area', component: StudentAreaComponent, canActivate: [AuthGuardS], children: [
       {path: '', component: StudentDashboardComponent},
@@ -39,6 +40,7 @@ const appRoutes: Routes = [
   },
   { path: 'contact-us', component: ContactusComponent },
   { path: 'cat/:cat', component: CourseCatComponent },
+  { path: 'subcat/:subcat', component: CourseSubcatComponent },
   { path: '**', redirectTo: 'home' }
 
 ]

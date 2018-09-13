@@ -9,13 +9,15 @@ export class QuizService {
 
   constructor(private http: Http) { }
 
-  get(url: string) {
+  get(testID: string) {
     var headers = new Headers();
+    var url = AppConfig.API_ENDPOINT + "/quizzard/test/"+testID+"?includeQuestions=true"
+    alert(url)
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', AppConfig.CURR_USER.token);
     console.log("quiz called")
-     return this.http.get("http://13.126.208.177:8080/quizzard/test/testing006?includeQuestions=true", {headers: headers})
-    // return this.http.get(url)
+    //return this.http.get("http://13.126.208.177:8080/quizzard/test/"+testID+"?includeQuestions=true", {headers: headers})
+    return this.http.get(url, {headers: headers})
     .map(res => res.text().length > 0 ? res.json() : null);
   }
 

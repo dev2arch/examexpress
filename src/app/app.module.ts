@@ -38,6 +38,8 @@ import { AddTestComponent } from './admin-area/add-test.component';
 import { AddStudentComponent } from './admin-area/add-student.component';
 import { AllStudentsComponent } from './admin-area/all-students.component';
 import { AdminDashboardComponent } from './admin-area/admin-dashboard.component';
+import {TestDataService} from "./services/test-data.service";
+import { CourseSubcatComponent } from './category/course-subcat.component';
 
 
 @NgModule({
@@ -65,6 +67,7 @@ import { AdminDashboardComponent } from './admin-area/admin-dashboard.component'
     AddStudentComponent,
     AllStudentsComponent,
     AdminDashboardComponent,
+    CourseSubcatComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,7 +81,8 @@ import { AdminDashboardComponent } from './admin-area/admin-dashboard.component'
     QuizService,
     AuthService,
     AuthGuardS,
-    TestflagService
+    TestflagService,
+    TestDataService
     // {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
   bootstrap: [AppComponent]

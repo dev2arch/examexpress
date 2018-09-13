@@ -15,10 +15,11 @@ export class QuizComponent implements OnInit {
   quiz: Quiz = new Quiz(null);
   mode: string = 'quiz';
   quizName: string;
+  testID:string;
   config: QuizConfig = {
     'allowBack': true,
     'allowReview': true,
-    'autoMove': true,  // if true, it will move to next question automatically when answered.
+    'autoMove': false,  // if true, it will move to next question automatically when answered.
     'duration': 0,  // indicates the time in which quiz needs to be completed. 0 means unlimited.
     'pageSize': 1,
     'requiredAll': false,  // indicates if you must answer all the questions before submitting.
@@ -36,11 +37,13 @@ export class QuizComponent implements OnInit {
     count: 1
   };
 
-  constructor(private quizService: QuizService, private activatedRoutes: ActivatedRoute) { }
+  constructor(private quizService: QuizService, private activatedRoutes: ActivatedRoute) {
+    this.quizName = this.activatedRoutes.snapshot.params['id']
+
+  }
 
   ngOnInit() {
     this.quizes = this.quizService.getAll();
-    this.quizName = this.quizes[0].id;
     this.loadQuiz(this.quizName);
     alert(status);
   }
@@ -80,7 +83,6 @@ export class QuizComponent implements OnInit {
   };
 
   isCorrect(question: Question) {
- console.log(question.options)
     return question.options.every(x => x.selected === x.answer) ? 'correct' : 'wrong';
   };
 
