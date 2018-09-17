@@ -68,11 +68,21 @@ export class AddTestComponent implements OnInit {
     console.log(testDetailsObj)
     this.testService.addTestDetails(testDetailsObj).subscribe(
       (res) => this.response = res,
-      (err) => console.log(err)
+      (err) => console.log(err),
+      () => this.testAdded()
     )
     this.detaileSubmitted = true
 
   }
+    public testAdded() {
+    alert("Test Details Added Successfully......")
+      document.getElementById("testdesc").classList.remove("active");
+      document.getElementById("testdesc").classList.add("fade");
+      document.getElementById("questions").classList.add("active");
+      document.getElementById("questions").classList.remove("fade");
+
+    }
+
    fileChangetemp(event) {
     this.testService.addQuestionstemp(event, this.testCode)
       .subscribe(

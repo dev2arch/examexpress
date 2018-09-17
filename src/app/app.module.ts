@@ -40,6 +40,8 @@ import { AllStudentsComponent } from './admin-area/all-students.component';
 import { AdminDashboardComponent } from './admin-area/admin-dashboard.component';
 import {TestDataService} from "./services/test-data.service";
 import { CourseSubcatComponent } from './category/course-subcat.component';
+import {UploadQuestionImageService} from "./services/upload-question-image.service";
+import { UploadImageComponent } from './upload-image/upload-image.component';
 
 
 @NgModule({
@@ -68,6 +70,7 @@ import { CourseSubcatComponent } from './category/course-subcat.component';
     AllStudentsComponent,
     AdminDashboardComponent,
     CourseSubcatComponent,
+    UploadImageComponent,
   ],
   imports: [
     BrowserModule,
@@ -82,7 +85,8 @@ import { CourseSubcatComponent } from './category/course-subcat.component';
     AuthService,
     AuthGuardS,
     TestflagService,
-    TestDataService
+    TestDataService,
+    UploadQuestionImageService
     // {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
   bootstrap: [AppComponent]
