@@ -7,6 +7,10 @@ export class UploadQuestionImageService {
   FOLDER = 'question-images/img001/';
   constructor() { }
   uploadfile(file) {
+    console.log(file)
+    var filename = file.name;
+    var testSubFolder =  filename.split('.').slice(0, -1).join('.')
+    this.FOLDER = 'question-images/' + testSubFolder + '/'
 
     const bucket = new S3(
       {

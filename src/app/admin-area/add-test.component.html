@@ -77,26 +77,104 @@
               </div>
             </div>
             <div id="questions" class="tab-pane fade">
-              <div *ngIf="detaileSubmitted">
+              <div *ngIf="!detaileSubmitted">
                 <div class="inn-title">
                   <h4>Submit All Questions with their answers</h4>
                 </div>
                 <br>
                 <a href="../../assets/images/Questions_File_Generator.xlsm" download><i class="fa fa-download text-success" aria-hidden="true"></i> Click Here To Download Sample File</a>
                 <div class="bor ad-cou-deta-h4">
-                  <form (ngSubmit)="addTestQuestions(testQuestions)" #testQuestions="ngForm">
-                    <div class="row">
-                      <div class="input-field col s12">
-                      <input style="padding-top:9px" type="file" (change)="fileChangetemp($event)" placeholder="Upload file" accept=".pdf,.doc,.docx,.json">
-                        <!--<label>Uplaod File:</label>-->
+                  <!--<form (ngSubmit)="addTestQuestions(testQuestions)" #testQuestions="ngForm">-->
+                    <!--<div class="row">-->
+                      <!--<div class="input-field col s12">-->
+                      <!--<input style="padding-top:9px" type="file" (change)="fileChangetemp($event)" placeholder="Upload file" accept=".pdf,.doc,.docx,.json">-->
+                        <!--&lt;!&ndash;<label>Uplaod File:</label>&ndash;&gt;-->
+                      <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="row">-->
+                      <!--<div class="input-field col s12">-->
+                        <!--<i class="waves-effect waves-light btn-large waves-input-wrapper" style=""><input type="submit" class="waves-button-input"></i>-->
+                      <!--</div>-->
+                    <!--</div>-->
+                  <!--</form>-->
+
+                  <form>
+                    <div class="form-row row">
+                      <div class="form-group col-md-10">
+                        <!--<label for="inputEmail4">Email</label>-->
+                        <input type="email" class="form-control" id="inputEmail4" placeholder="Type Your question & check include image (if question have any)">
+                      </div>
+                      <div class="form-group col-md-2">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="gridCheck2">
+                          <label class="form-check-label" for="gridCheck2">
+                            Include Image
+                          </label>
+                        </div>
+                      </div>
+                      <div class="form-group col-md-3">
+                        <!--<label for="inputState">State</label>-->
+                        <select id="inputState" class="form-control">
+                          <option selected>Option Type is Text</option>
+                          <option selected>Option Type is Image</option>
+                        </select>
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="input-field col s12">
-                        <i class="waves-effect waves-light btn-large waves-input-wrapper" style=""><input type="submit" class="waves-button-input"></i>
+                    <div class="option-container">
+                    <div class="form-group col-md-4">
+                      <!--<label for="inputAddress">Address</label>-->
+                      <input type="text" class="form-control" id="answer1" placeholder="Option 1">
+                    </div>
+                    <div class="form-group col-md-2">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="option1">
+                        <label class="form-check-label" for="option1">
+                          Is True
+                        </label>
                       </div>
                     </div>
+                      <div class="form-group col-md-4">
+                        <!--<label for="inputAddress">Address</label>-->
+                        <input type="text" class="form-control" id="answer2" placeholder="Option 2">
+                      </div>
+                      <div class="form-group col-md-2">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="option2">
+                          <label class="form-check-label" for="option2">
+                            Is True
+                          </label>
+                        </div>
+                      </div>
+                      <div class="form-group col-md-4">
+                        <!--<label for="inputAddress">Address</label>-->
+                        <input type="text" class="form-control" id="answer3" placeholder="Option 3">
+                      </div>
+                      <div class="form-group col-md-2">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="option3">
+                          <label class="form-check-label" for="option3">
+                            Is True
+                          </label>
+                        </div>
+                      </div>
+                    <div class="form-group col-md-4">
+                      <!--<label for="inputAddress">Address</label>-->
+                      <input type="text" class="form-control" id="answer4" placeholder="Option 4">
+                    </div>
+                    <div class="form-group col-md-2">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="option4">
+                        <label class="form-check-label" for="option4">
+                          Is True
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
                   </form>
+
+
                 </div>
               </div>
               <div *ngIf="!detaileSubmitted" style="height: 300px">
