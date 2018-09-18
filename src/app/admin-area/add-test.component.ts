@@ -14,13 +14,14 @@ export class AddTestComponent implements OnInit {
   response;
   testCode;
   quesRes;
-  optionType:string;
-  noOfQuestion:number;
-  numbers:any;
+  optionType: string;
+  noOfQuestion: number;
+  numbers: any;
+  includeImage: false;
   constructor(private testService:  AllTestService) {
     this.optionType = 'text';
-    this.noOfQuestion = 5;
-    this.numbers = Array(this.noOfQuestion).fill(0).map((x,i)=>i);
+    this.noOfQuestion = 3;
+    this.numbers = Array(this.noOfQuestion).fill(0).map((x, i) => i);
   }
 
   ngOnInit() {
@@ -96,6 +97,10 @@ export class AddTestComponent implements OnInit {
         (res) => this.quesRes = res,
         (err) => console.log("tserror>>", err)
       )
+  }
+
+  addQuestions(form: NgForm) {
+    console.log(form.value)
   }
 
 }
