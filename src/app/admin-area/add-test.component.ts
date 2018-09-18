@@ -14,7 +14,14 @@ export class AddTestComponent implements OnInit {
   response;
   testCode;
   quesRes;
-  constructor(private testService:  AllTestService) { }
+  optionType:string;
+  noOfQuestion:number;
+  numbers:any;
+  constructor(private testService:  AllTestService) {
+    this.optionType = 'text';
+    this.noOfQuestion = 5;
+    this.numbers = Array(this.noOfQuestion).fill(0).map((x,i)=>i);
+  }
 
   ngOnInit() {
     this.detaileSubmitted = false
