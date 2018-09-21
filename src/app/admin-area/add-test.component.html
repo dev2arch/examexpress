@@ -98,154 +98,496 @@
                     <!--</div>-->
                   <!--</form>-->
 
+
+
+
+
+
+
+
+
+                  <!--<form (ngSubmit)='addQuestions(questions)' #questions='ngForm'>-->
+                    <!--<div class="question-container col-md-12" *ngFor="let number of numbers">-->
+                      <!--<p>Question No. {{number+1}}</p>-->
+                      <!--<div class="form-row row">-->
+                        <!--<div class="form-group col-md-10">-->
+                         <!--<input-->
+                           <!--type="text"-->
+                           <!--class="form-control"-->
+                           <!--id='question{{number+1}}'-->
+                           <!--placeholder="Type Your question & check include image (if question have any)">-->
+                        <!--</div>-->
+
+                        <!--<div class="form-group col-md-2">-->
+                          <!--<div class="form-check">-->
+                            <!--<input class="form-check-input" type="checkbox" id='include-image-for-question{{number+1}}' name='include-image-for-question{{number+1}}' #include ngModel>-->
+                            <!--<label class="form-check-label" for='include-image-for-question{{number+1}}'>Include Image</label>-->
+                          <!--</div>-->
+                        <!--</div>-->
+
+                        <!--<div class="form-group col-md-12" *ngIf="include.checked">-->
+                          <!--<label for='file-for-question{{number+1}}' class="custom-file-upload">-->
+                            <!--<i class="fa fa-cloud-upload"></i> Question Image-->
+                          <!--</label>-->
+                          <!--<input-->
+                            <!--id='file-for-question{{number+1}}'-->
+                            <!--type="file"-->
+                            <!--name ='file-for-question{{number+1}}' ngModel>-->
+                        <!--</div>-->
+
+                        <!--<div class="form-group col-md-3">-->
+                          <!--<select id='inputState{{number+1}}' class="form-control" name='optionType-for-question{{number+1}}' [(ngModel)]="optionType">-->
+                            <!--<option selected>Option Type is text</option>-->
+                            <!--<option >Option Type is image</option>-->
+                          <!--</select>-->
+                        <!--</div>-->
+                      <!--</div>-->
+
+                      <!--<div class="option-container" *ngIf='optionType.includes("text")'>-->
+                        <!--<div class="form-group col-md-4">-->
+                          <!--<input-->
+                            <!--type="text"-->
+                            <!--class="form-control"-->
+                            <!--id='question{{number+1}}-answer1'-->
+                            <!--placeholder="Option 1"-->
+                            <!--name='question{{number+1}}option1' ngModel>-->
+                        <!--</div>-->
+
+                        <!--<div class="form-group col-md-2">-->
+                          <!--<div class="form-check">-->
+                            <!--<input class="form-check-input"-->
+                                   <!--type="checkbox"-->
+                                   <!--id='question{{number+1}}option1'-->
+                                   <!--name='isoption1' ngModel>-->
+                            <!--<label class="form-check-label" for='question{{number+1}}option1' >Is True</label>-->
+                          <!--</div>-->
+                        <!--</div>-->
+
+                        <!--<div class="form-group col-md-4">-->
+                          <!--<input-->
+                            <!--type="text"-->
+                            <!--class="form-control"-->
+                            <!--id='question{{number+1}}-answer2'-->
+                            <!--placeholder="Option 2"-->
+                            <!--name='question{{number+1}}option2' ngModel>-->
+                        <!--</div>-->
+
+                        <!--<div class="form-group col-md-2">-->
+                          <!--<div class="form-check">-->
+                            <!--<input-->
+                              <!--class="form-check-input"-->
+                              <!--type="checkbox"-->
+                              <!--id='question{{number+1}}option2'-->
+                              <!--name='isoption2' ngModel>-->
+                            <!--<label class="form-check-label" for='question{{number+1}}option2'>Is True</label>-->
+                          <!--</div>-->
+                        <!--</div>-->
+
+                        <!--<div class="form-group col-md-4">-->
+                          <!--<input-->
+                            <!--type="text"-->
+                            <!--class="form-control"-->
+                            <!--id='question{{number+1}}-answer3'-->
+                            <!--placeholder="Option 3"-->
+                            <!--name='question{{number+1}}option3' ngModel>-->
+                        <!--</div>-->
+
+                        <!--<div class="form-group col-md-2">-->
+                          <!--<div class="form-check">-->
+                            <!--<input-->
+                              <!--class="form-check-input"-->
+                              <!--type="checkbox"-->
+                              <!--id='question{{number+1}}option3'-->
+                              <!--name='isoption3' ngModel>-->
+                            <!--<label class="form-check-label" for='question{{number+1}}option3'>Is True</label>-->
+                          <!--</div>-->
+                        <!--</div>-->
+
+                        <!--<div class="form-group col-md-4">-->
+                          <!--<input type="text" class="form-control" id='question{{number+1}}-answer4' placeholder="Option 4" name='question{{number+1}}option4' ngModel>-->
+                        <!--</div>-->
+                        <!--<div class="form-group col-md-2">-->
+                          <!--<div class="form-check">-->
+                            <!--<input-->
+                              <!--class="form-check-input"-->
+                              <!--type="checkbox"-->
+                              <!--id='question{{number+1}}option4'-->
+                              <!--name='isoption4' ngModel>-->
+                            <!--<label class="form-check-label" for='question{{number+1}}option4'>Is True</label>-->
+                          <!--</div>-->
+                        <!--</div>-->
+                      <!--</div>-->
+                      <!---->
+                      <!--<div class="option-container" *ngIf='optionType.includes("image")'>-->
+                        <!--<div class="form-group col-md-4">-->
+                          <!--<label for="question{{number+1}}-option1-file-upload" class="custom-file-upload">-->
+                            <!--<i class="fa fa-cloud-upload"></i> Custom Upload-->
+                          <!--</label>-->
+                          <!--<input id="question{{number+1}}-option1-file-upload" type="file"/>-->
+                        <!--</div>-->
+                        <!--<div class="form-group col-md-2">-->
+                          <!--<div class="form-check">-->
+                            <!--<input class="form-check-input" type="checkbox" id='question{{number+1}}option1'>-->
+                            <!--<label class="form-check-label" for='question{{number+1}}option1'>-->
+                              <!--Is True-->
+                            <!--</label>-->
+                          <!--</div>-->
+                        <!--</div>-->
+
+                        <!--<div class="form-group col-md-4">-->
+                          <!--<label for='question{{number+1}}-option2-file-upload' class="custom-file-upload">-->
+                            <!--<i class="fa fa-cloud-upload"></i> Custom Upload-->
+                          <!--</label>-->
+                          <!--<input id='question{{number+1}}-option2-file-upload' type="file"/>-->
+                        <!--</div>-->
+                        <!--<div class="form-group col-md-2">-->
+                          <!--<div class="form-check">-->
+                            <!--<input class="form-check-input" type="checkbox" id='question{{number+1}}option2'>-->
+                            <!--<label class="form-check-label" for='question{{number+1}}option1'>-->
+                              <!--Is True-->
+                            <!--</label>-->
+                          <!--</div>-->
+                        <!--</div>-->
+
+                        <!--<div class="form-group col-md-4">-->
+                          <!--<label for='question{{number+1}}-option3-file-upload' class="custom-file-upload">-->
+                            <!--<i class="fa fa-cloud-upload"></i> Custom Upload-->
+                          <!--</label>-->
+                          <!--<input id='question{{number+1}}-option3-file-upload' type="file"/>-->
+                        <!--</div>-->
+                        <!--<div class="form-group col-md-2">-->
+                          <!--<div class="form-check">-->
+                            <!--<input class="form-check-input" type="checkbox" id='question{{number+1}}option3'>-->
+                            <!--<label class="form-check-label" for='question{{number+1}}option3'>-->
+                              <!--Is True-->
+                            <!--</label>-->
+                          <!--</div>-->
+                        <!--</div>-->
+
+                        <!--<div class="form-group col-md-4">-->
+                          <!--<label for='question{{number+1}}-option4-file-upload' class="custom-file-upload">-->
+                            <!--<i class="fa fa-cloud-upload"></i> Custom Upload-->
+                          <!--</label>-->
+                          <!--<input id='question{{number+1}}-option4-file-upload' type="file"/>-->
+                        <!--</div>-->
+                        <!--<div class="form-group col-md-2">-->
+                          <!--<div class="form-check">-->
+                            <!--<input class="form-check-input" type="checkbox" id='question{{number+1}}option4'>-->
+                            <!--<label class="form-check-label" for='question{{number+1}}option4'>-->
+                              <!--Is True-->
+                            <!--</label>-->
+                          <!--</div>-->
+                        <!--</div>-->
+                      <!--</div>-->
+                      <!--<hr class="hr-primary">-->
+
+
+                    <!--</div>-->
+                    <!--<button type="submit" class="btn btn-primary">Submit</button>-->
+                  <!--</form>-->
+
+
+
+
+
+
                   <form (ngSubmit)='addQuestions(questions)' #questions='ngForm'>
                     <div class="question-container col-md-12" *ngFor="let number of numbers">
                       <p>Question No. {{number+1}}</p>
-                    <div class="form-row row">
-                      <div class="form-group col-md-10">
-                        <!--<label for="inputEmail4">Email</label>-->
-                        <input type="text" class="form-control" id='question{{number+1}}' placeholder="Type Your question & check include image (if question have any)" name='question{{number+1}}' ngModel>
-                      </div>
-                      <div class="form-group col-md-2">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id='include-image-for-question{{number+1}}' name='include-image-for-question{{number+1}}' #include ngModel>
-                          <label class="form-check-label" for='include-image-for-question{{number+1}}'>
-                            Include Image
-                          </label>
+                      <div class="form-row row">
+                        <div class="form-group col-md-10">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id='question{{number+1}}'
+                            placeholder="Type Your question & check include image (if question have any)">
                         </div>
-                      </div>
-                      <div class="form-group col-md-12" *ngIf="include.checked">
-                        <label for='file-for-question{{number+1}}' class="custom-file-upload">
-                          <i class="fa fa-cloud-upload"></i> Question Image
-                        </label>
-                        <input id='file-for-question{{number+1}}' type="file" name ='file-for-question{{number+1}}' ngModel>
-                      </div>
-                      <div class="form-group col-md-3">
-                        <!--<label for="inputState">State</label>-->
-                        <select id='inputState{{number+1}}' class="form-control" name='optionType-for-question{{number+1}}' [(ngModel)]="optionType">
-                          <option selected>Option Type is text</option>
-                          <option >Option Type is image</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="option-container" *ngIf='optionType.includes("text")'>
-                    <div class="form-group col-md-4">
-                      <!--<label for="inputAddress">Address</label>-->
-                      <input type="text" class="form-control" id='question{{number+1}}-answer1' placeholder="Option 1"  name='question{{number+1}}option1' ngModel>
-                    </div>
-                    <div class="form-group col-md-2">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id='question{{number+1}}option1' name='isoption1' ngModel>
-                        <label class="form-check-label" for='question{{number+1}}option1' >
-                          Is True
-                        </label>
-                      </div>
-                    </div>
-                      <div class="form-group col-md-4">
-                        <!--<label for="inputAddress">Address</label>-->
-                        <input type="text" class="form-control" id='question{{number+1}}-answer2' placeholder="Option 2" name='question{{number+1}}option2' ngModel>
-                      </div>
-                      <div class="form-group col-md-2">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id='question{{number+1}}option2' name='isoption2' ngModel>
-                          <label class="form-check-label" for='question{{number+1}}option2'>
-                            Is True
-                          </label>
+
+                        <div class="form-group col-md-2">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id='include-image-for-question{{number+1}}' name='include-image-for-question{{number+1}}' #include ngModel>
+                            <label class="form-check-label" for='include-image-for-question{{number+1}}'>Include Image</label>
+                          </div>
                         </div>
-                      </div>
-                      <div class="form-group col-md-4">
-                        <!--<label for="inputAddress">Address</label>-->
-                        <input type="text" class="form-control" id='question{{number+1}}-answer3' placeholder="Option 3" name='question{{number+1}}option3' ngModel>
-                      </div>
-                      <div class="form-group col-md-2">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id='question{{number+1}}option3' name='isoption3' ngModel>
-                          <label class="form-check-label" for='question{{number+1}}option3'>
-                            Is True
+
+                        <div class="form-group col-md-12" *ngIf="include.checked">
+                          <label for='file-for-question{{number+1}}' class="custom-file-upload">
+                            <i class="fa fa-cloud-upload"></i> Question Image
                           </label>
+                          <input
+                            id='file-for-question{{number+1}}'
+                            type="file"
+                            name ='file-for-question{{number+1}}' ngModel>
                         </div>
-                      </div>
-                    <div class="form-group col-md-4">
-                      <!--<label for="inputAddress">Address</label>-->
-                      <input type="text" class="form-control" id='question{{number+1}}-answer4' placeholder="Option 4" name='question{{number+1}}option4' ngModel>
-                    </div>
-                    <div class="form-group col-md-2">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id='question{{number+1}}option4' name='isoption4' ngModel>
-                        <label class="form-check-label" for='question{{number+1}}option4'>
-                          Is True
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                    <div class="option-container" *ngIf='optionType.includes("image")'>
-                      <div class="form-group col-md-4">
-                        <label for="question{{number+1}}-option1-file-upload" class="custom-file-upload">
-                          <i class="fa fa-cloud-upload"></i> Custom Upload
-                        </label>
-                        <input id="question{{number+1}}-option1-file-upload" type="file"/>
-                      </div>
-                      <div class="form-group col-md-2">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id='question{{number+1}}option1'>
-                          <label class="form-check-label" for='question{{number+1}}option1'>
-                            Is True
-                          </label>
+
+                        <div class="form-group col-md-3">
+                          <select id='inputState{{number+1}}' class="form-control" name='optionType-for-question{{number+1}}' [(ngModel)]="optionType">
+                            <option selected>Option Type is text</option>
+                            <option >Option Type is image</option>
+                          </select>
                         </div>
                       </div>
 
-                      <div class="form-group col-md-4">
-                        <label for='question{{number+1}}-option2-file-upload' class="custom-file-upload">
-                          <i class="fa fa-cloud-upload"></i> Custom Upload
-                        </label>
-                        <input id='question{{number+1}}-option2-file-upload' type="file"/>
-                      </div>
-                      <div class="form-group col-md-2">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id='question{{number+1}}option2'>
-                          <label class="form-check-label" for='question{{number+1}}option1'>
-                            Is True
-                          </label>
+                      <div class="option-container" *ngIf='optionType.includes("text")'>
+                        <div class="form-group col-md-4">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id='question{{number+1}}-answer1'
+                            placeholder="Option 1"
+                            name='question{{number+1}}option1' ngModel>
+                        </div>
+
+                        <div class="form-group col-md-2">
+                          <div class="form-check">
+                            <input class="form-check-input"
+                                   type="checkbox"
+                                   id='question{{number+1}}option1'
+                                   name='isoption1' ngModel>
+                            <label class="form-check-label" for='question{{number+1}}option1' >Is True</label>
+                          </div>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id='question{{number+1}}-answer2'
+                            placeholder="Option 2"
+                            name='question{{number+1}}option2' ngModel>
+                        </div>
+
+                        <div class="form-group col-md-2">
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id='question{{number+1}}option2'
+                              name='isoption2' ngModel>
+                            <label class="form-check-label" for='question{{number+1}}option2'>Is True</label>
+                          </div>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id='question{{number+1}}-answer3'
+                            placeholder="Option 3"
+                            name='question{{number+1}}option3' ngModel>
+                        </div>
+
+                        <div class="form-group col-md-2">
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id='question{{number+1}}option3'
+                              name='isoption3' ngModel>
+                            <label class="form-check-label" for='question{{number+1}}option3'>Is True</label>
+                          </div>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                          <input type="text" class="form-control" id='question{{number+1}}-answer4' placeholder="Option 4" name='question{{number+1}}option4' ngModel>
+                        </div>
+                        <div class="form-group col-md-2">
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id='question{{number+1}}option4'
+                              name='isoption4' ngModel>
+                            <label class="form-check-label" for='question{{number+1}}option4'>Is True</label>
+                          </div>
                         </div>
                       </div>
 
-                      <div class="form-group col-md-4">
-                        <label for='question{{number+1}}-option3-file-upload' class="custom-file-upload">
-                          <i class="fa fa-cloud-upload"></i> Custom Upload
-                        </label>
-                        <input id='question{{number+1}}-option3-file-upload' type="file"/>
-                      </div>
-                      <div class="form-group col-md-2">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id='question{{number+1}}option3'>
-                          <label class="form-check-label" for='question{{number+1}}option3'>
-                            Is True
+                      <div class="option-container" *ngIf='optionType.includes("image")'>
+                        <div class="form-group col-md-4">
+                          <label for="question{{number+1}}-option1-file-upload" class="custom-file-upload">
+                            <i class="fa fa-cloud-upload"></i> Custom Upload
                           </label>
+                          <input id="question{{number+1}}-option1-file-upload" type="file"/>
                         </div>
-                      </div>
+                        <div class="form-group col-md-2">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id='question{{number+1}}option1'>
+                            <label class="form-check-label" for='question{{number+1}}option1'>
+                              Is True
+                            </label>
+                          </div>
+                        </div>
 
-                      <div class="form-group col-md-4">
-                        <label for='question{{number+1}}-option4-file-upload' class="custom-file-upload">
-                          <i class="fa fa-cloud-upload"></i> Custom Upload
-                        </label>
-                        <input id='question{{number+1}}-option4-file-upload' type="file"/>
-                      </div>
-                      <div class="form-group col-md-2">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id='question{{number+1}}option4'>
-                          <label class="form-check-label" for='question{{number+1}}option4'>
-                            Is True
+                        <div class="form-group col-md-4">
+                          <label for='question{{number+1}}-option2-file-upload' class="custom-file-upload">
+                            <i class="fa fa-cloud-upload"></i> Custom Upload
                           </label>
+                          <input id='question{{number+1}}-option2-file-upload' type="file"/>
+                        </div>
+                        <div class="form-group col-md-2">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id='question{{number+1}}option2'>
+                            <label class="form-check-label" for='question{{number+1}}option1'>
+                              Is True
+                            </label>
+                          </div>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                          <label for='question{{number+1}}-option3-file-upload' class="custom-file-upload">
+                            <i class="fa fa-cloud-upload"></i> Custom Upload
+                          </label>
+                          <input id='question{{number+1}}-option3-file-upload' type="file"/>
+                        </div>
+                        <div class="form-group col-md-2">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id='question{{number+1}}option3'>
+                            <label class="form-check-label" for='question{{number+1}}option3'>
+                              Is True
+                            </label>
+                          </div>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                          <label for='question{{number+1}}-option4-file-upload' class="custom-file-upload">
+                            <i class="fa fa-cloud-upload"></i> Custom Upload
+                          </label>
+                          <input id='question{{number+1}}-option4-file-upload' type="file"/>
+                        </div>
+                        <div class="form-group col-md-2">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id='question{{number+1}}option4'>
+                            <label class="form-check-label" for='question{{number+1}}option4'>
+                              Is True
+                            </label>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <hr class="hr-primary">
+                      <hr class="hr-primary">
 
 
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                   </form>
 
+
+
+
+                  <form [formGroup]="signUpForm">
+                    <div formArrayName="questions">
+                      <h4>Yor Hobbies</h4>
+                      <button class="btn btn-default" type="button" (click)="onAddHobby()"> Add question</button>
+                      <div class="question-container col-md-12" *ngFor="let hobbyControl of signUpForm.get('questions').controls; let i = index" >
+
+                        <div [formGroupName]="i">
+                          <p><label for="question">Question No{{i+1}}</label></p>
+                          <div class="form-row row">
+                            <div class="form-group col-md-10">
+                              <input
+                                type="text"
+                                id="question"
+                                class="form-control"
+                                formControlName="question">
+                            </div>
+                            <div class="form-group col-md-2">
+                              <div class="form-check">
+                                <label for="includeImage">Include Image</label>
+                                <input
+                                  type="checkbox"
+                                  id="includeImage"
+                                  class="form-check-input"
+                                  formControlName="includeImage">
+                              </div>
+                            </div>
+                              <div class="radio" *ngFor="let option of optionTypes">
+                                <label>
+                                  <input
+                                    formControlName="optiontype"
+                                    type="radio"
+                                    [value]="option">{{ option }}
+                                </label>
+                              </div>
+                          </div>
+                          <div class="form-group" formGroupName="options">
+                            <div class="col-md-6">
+                              <div class="col-md-8">
+                                <label for="option1">Option1</label>
+                                <input
+                                  type="text"
+                                  id="option1"
+                                  class="form-control"
+                                  formControlName="option1">
+                              </div>
+                              <div class="col-md-4">
+                                <label for="isoption1">Is True</label>
+                                <input
+                                  type="checkbox"
+                                  id="isoption1"
+                                  class="form-control"
+                                  formControlName="option1is">
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="col-md-8">
+                                <label for="option2">Option2</label>
+                                <input
+                                  type="text"
+                                  id="option2"
+                                  class="form-control"
+                                  formControlName="option2">
+                              </div>
+                              <div class="col-md-4">
+                                <label for="isoption2">Is True</label>
+                                <input
+                                  type="checkbox"
+                                  id="isoption2"
+                                  class="form-control"
+                                  formControlName="option2is">
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="col-md-8">
+                                <label for="option3">Option3</label>
+                                <input
+                                  type="text"
+                                  id="option3"
+                                  class="form-control"
+                                  formControlName="option3">
+                              </div>
+                              <div class="col-md-4">
+                                <label for="isoption3">Is True</label>
+                                <input
+                                  type="checkbox"
+                                  id="isoption3"
+                                  class="form-control"
+                                  formControlName="option3is">
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="col-md-8">
+                                <label for="option4">Option4</label>
+                                <input
+                                  type="text"
+                                  id="option4"
+                                  class="form-control"
+                                  formControlName="option4">
+                              </div>
+                              <div class="col-md-4">
+                                <label for="isoption4">Is True</label>
+                                <input
+                                  type="checkbox"
+                                  id="isoption4"
+                                  class="form-control"
+                                  formControlName="option4is">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <button class="btn btn-primary" type="submit" (click)="formSubmitted()">Submit</button>
+                  </form>
 
                 </div>
               </div>

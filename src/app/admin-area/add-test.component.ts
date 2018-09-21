@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {NgForm} from '@angular/forms';
+import {NgForm,FormArray, FormControl, FormGroup} from '@angular/forms';
 import { AllTestService} from "../services/all-test.service";
 import {stringifyElement} from "@angular/platform-browser/testing/browser_util";
 
@@ -18,14 +18,21 @@ export class AddTestComponent implements OnInit {
   noOfQuestion: number;
   numbers: any;
   includeImage: false;
+
+  optionTypes = ['text', 'image'];
+  signUpForm: FormGroup;
+
   constructor(private testService:  AllTestService) {
     this.optionType = 'text';
-    this.noOfQuestion = 3;
+    this.noOfQuestion = 1;
     this.numbers = Array(this.noOfQuestion).fill(0).map((x, i) => i);
   }
 
   ngOnInit() {
-    this.detaileSubmitted = false
+    this.detaileSubmitted = false;
+    this.signUpForm = new FormGroup({
+      'questions': new FormArray([])
+    });
   }
 
   public addTestDetails(testDetails: NgForm) {
@@ -101,6 +108,28 @@ export class AddTestComponent implements OnInit {
 
   addQuestions(form: NgForm) {
     console.log(form.value)
+  }
+  formSubmitted() {
+    console.log(this.signUpForm.value.questions);
+  }
+  onAddHobby() {
+    const Questions = new FormGroup({
+      'question': new FormControl(null),
+      'includeImage': new FormControl(false),
+      'optiontype': new FormControl('text'),
+      'options': new FormGroup({
+        'option1': new FormControl(null),
+        'option1is': new FormControl(false),
+        'option2': new FormControl(null),
+        'option2is': new FormControl(false),
+        'option3': new FormControl(null),
+        'option3is': new FormControl(false),
+        'option4': new FormControl(null),
+        'option4is': new FormControl(false),
+      })
+    });
+    (<FormArray>this.signUpForm.get('questions')).push(Questions)
+
   }
 
 }
