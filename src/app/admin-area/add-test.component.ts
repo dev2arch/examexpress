@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {NgForm,FormArray, FormControl, FormGroup} from '@angular/forms';
+import {NgForm,FormArray, FormControl, FormGroup, Validators} from '@angular/forms';
 import { AllTestService} from "../services/all-test.service";
 import {stringifyElement} from "@angular/platform-browser/testing/browser_util";
+import {UploadQuestionImageService} from "../services/upload-question-image.service";
 
 @Component({
   selector: 'app-add-test',
@@ -18,21 +19,28 @@ export class AddTestComponent implements OnInit {
   noOfQuestion: number;
   numbers: any;
   includeImage: false;
+  selectedFiles: FileList;
 
   optionTypes = ['text', 'image'];
   signUpForm: FormGroup;
 
-  constructor(private testService:  AllTestService) {
+  constructor(private testService:  AllTestService, private uploadService: UploadQuestionImageService) {
     this.optionType = 'text';
-    this.noOfQuestion = 1;
+    this.noOfQuestion = 3;
     this.numbers = Array(this.noOfQuestion).fill(0).map((x, i) => i);
   }
 
   ngOnInit() {
     this.detaileSubmitted = false;
     this.signUpForm = new FormGroup({
-      'questions': new FormArray([])
+      'questions': new FormArray([
+      ])
     });
+
+    for (var i = 0; i < this.noOfQuestion; i++){
+      this.onAddHobby();
+    }
+
   }
 
   public addTestDetails(testDetails: NgForm) {
@@ -110,26 +118,81 @@ export class AddTestComponent implements OnInit {
     console.log(form.value)
   }
   formSubmitted() {
-    console.log(this.signUpForm.value.questions);
+    console.log(this.signUpForm);
+    this.signUpForm.reset()
+
   }
   onAddHobby() {
-    const Questions = new FormGroup({
-      'question': new FormControl(null),
-      'includeImage': new FormControl(false),
-      'optiontype': new FormControl('text'),
-      'options': new FormGroup({
-        'option1': new FormControl(null),
-        'option1is': new FormControl(false),
-        'option2': new FormControl(null),
-        'option2is': new FormControl(false),
-        'option3': new FormControl(null),
-        'option3is': new FormControl(false),
-        'option4': new FormControl(null),
-        'option4is': new FormControl(false),
-      })
-    });
-    (<FormArray>this.signUpForm.get('questions')).push(Questions)
+    // const Questions = new FormGroup({
+    //   'question': new FormControl(null, Validators.required),
+    //   'includeImage': new FormControl(false),
+    //   'questionImage': new FormControl(null),
+    //   'optiontype': new FormControl('text'),
+    //   'solution': new FormControl(null),
+    //   'options': new FormGroup({
+    //     'option1': new FormControl(null, Validators.required),
+    //     'option1is': new FormControl(false),
+    //     'option1img': new FormControl(null),
+    //     'option2': new FormControl(null, Validators.required),
+    //     'option2is': new FormControl(false),
+    //     'option2img': new FormControl(null),
+    //     'option3': new FormControl(null, Validators.required),
+    //     'option3is': new FormControl(false),
+    //     'option3img': new FormControl(null),
+    //     'option4': new FormControl(null, Validators.required),
+    //     'option4is': new FormControl(false),
+    //     'option4img': new FormControl(null),
+    //   })
+    // });
 
+    const Questions = new FormGroup({
+      'question': new FormControl(null, Validators.required),
+      'includeImage': new FormControl(false),
+      'questionImage': new FormControl(null),
+      'optiontype': new FormControl('text'),
+      'solution': new FormControl(null),
+      'options': new FormArray([
+        new FormGroup({
+          'option': new FormControl(null, Validators.required),
+          'optionis': new FormControl(false),
+          'optionimg': new FormControl(null),
+        }),
+        new FormGroup({
+          'option': new FormControl(null, Validators.required),
+          'optionis': new FormControl(false),
+          'optionimg': new FormControl(null),
+        }),
+        new FormGroup({
+          'option': new FormControl(null, Validators.required),
+          'optionis': new FormControl(false),
+          'optionimg': new FormControl(null),
+        }),
+        new FormGroup({
+          'option': new FormControl(null, Validators.required),
+          'optionis': new FormControl(false),
+          'optionimg': new FormControl(null),
+        })
+        ])
+    });
+    (<FormArray>this.signUpForm.get('questions')).push(Questions);
+
+  //this.addOptions()
+  }
+  addOptions() {
+    const AnsOptions = new FormGroup({
+      'option': new FormControl(null, Validators.required),
+      'optionis': new FormControl(false),
+      'optionimg': new FormControl(null),
+    });
+    console.log("hiiii");
+    (<FormArray>this.signUpForm.get('questions')).push(AnsOptions)
+}
+
+  selectFile(event) {
+    this.selectedFiles = event.target.files;
+    const file = this.selectedFiles.item(0);
+    this.uploadService.uploadfile(file);
+    alert(this.selectedFiles)
   }
 
 }

@@ -22,3 +22,21 @@ hr {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+.no-space{
+  padding:0px!important;
+  margin: 0px!important;
+}
+.option-img{
+  padding-bottom: .16em;
+  padding-top: .16em;
+}
+.f-20{
+   font-size: 22px;
+ }
+.f-21{
+  font-size: 22px;
+  color: darkgreen;
+}
+input.ng-invalid.ng-touched{
+  border: 1px solid #aa3569
+}
