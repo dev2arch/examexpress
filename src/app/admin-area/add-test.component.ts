@@ -118,8 +118,8 @@ export class AddTestComponent implements OnInit {
     console.log(form.value)
   }
   formSubmitted() {
-    console.log(this.signUpForm);
-    this.signUpForm.reset()
+    console.log(this.signUpForm.value);
+    //this.signUpForm.reset()
 
   }
   onAddHobby() {
