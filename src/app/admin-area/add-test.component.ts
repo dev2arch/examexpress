@@ -146,30 +146,34 @@ export class AddTestComponent implements OnInit {
     // });
 
     const Questions = new FormGroup({
-      'question': new FormControl(null, Validators.required),
+      'name': new FormControl(null, Validators.required),
       'includeImage': new FormControl(false),
       'questionImage': new FormControl(null),
-      'optiontype': new FormControl('text'),
+      'optionType': new FormControl('text'),
+      'timeLimit': new FormControl(60),
+      'isActive': new FormControl(true),
+      'marks': new FormControl(5),
       'solution': new FormControl(null),
+      'solutionImg': new FormControl(null),
       'options': new FormArray([
         new FormGroup({
-          'option': new FormControl(null, Validators.required),
-          'optionis': new FormControl(false),
+          'name': new FormControl(null, Validators.required),
+          'isAnswer': new FormControl(false),
           'optionimg': new FormControl(null),
         }),
         new FormGroup({
-          'option': new FormControl(null, Validators.required),
-          'optionis': new FormControl(false),
+          'name': new FormControl(null, Validators.required),
+          'isAnswer': new FormControl(false),
           'optionimg': new FormControl(null),
         }),
         new FormGroup({
-          'option': new FormControl(null, Validators.required),
-          'optionis': new FormControl(false),
+          'name': new FormControl(null, Validators.required),
+          'isAnswer': new FormControl(false),
           'optionimg': new FormControl(null),
         }),
         new FormGroup({
-          'option': new FormControl(null, Validators.required),
-          'optionis': new FormControl(false),
+          'name': new FormControl(null, Validators.required),
+          'isAnswer': new FormControl(false),
           'optionimg': new FormControl(null),
         })
         ])
