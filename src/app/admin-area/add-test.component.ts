@@ -26,7 +26,7 @@ export class AddTestComponent implements OnInit {
 
   constructor(private testService:  AllTestService, private uploadService: UploadQuestionImageService) {
     this.optionType = 'text';
-    this.noOfQuestion = 3;
+    this.noOfQuestion = 2;
     this.numbers = Array(this.noOfQuestion).fill(0).map((x, i) => i);
   }
 
@@ -118,34 +118,35 @@ export class AddTestComponent implements OnInit {
     console.log(form.value)
   }
   formSubmitted() {
-    console.log(this.signUpForm.value);
-    //this.signUpForm.reset()
+    console.log(this.signUpForm.value.questions);
+    let arr = this.signUpForm.value.questions;
+    const id = "fakepath";
+    arr.forEach(this.setQuestionImagePath)
+     console.log(arr)
+    // var qArray = this.signUpForm.value.questions;
+    // this.testService.addqArray(qArray, this.testCode)
+    //   .subscribe(
+    //     (res) => console.log(res),
+    //     (err) => console.log(err)
+    //   )
+
 
   }
-  onAddHobby() {
-    // const Questions = new FormGroup({
-    //   'question': new FormControl(null, Validators.required),
-    //   'includeImage': new FormControl(false),
-    //   'questionImage': new FormControl(null),
-    //   'optiontype': new FormControl('text'),
-    //   'solution': new FormControl(null),
-    //   'options': new FormGroup({
-    //     'option1': new FormControl(null, Validators.required),
-    //     'option1is': new FormControl(false),
-    //     'option1img': new FormControl(null),
-    //     'option2': new FormControl(null, Validators.required),
-    //     'option2is': new FormControl(false),
-    //     'option2img': new FormControl(null),
-    //     'option3': new FormControl(null, Validators.required),
-    //     'option3is': new FormControl(false),
-    //     'option3img': new FormControl(null),
-    //     'option4': new FormControl(null, Validators.required),
-    //     'option4is': new FormControl(false),
-    //     'option4img': new FormControl(null),
-    //   })
-    // });
+  setQuestionImagePath(item, index) {
+    console.log(item.questionImage)
 
-    const Questions = new FormGroup({
+    item.questionImage = item.questionImage.replace(/^.*\\/, "");
+    // item.options.forEach(this.setOptionImagePath)
+
+  }
+  // setOptionImagePath(item, index) {
+  //   if (item.optionImage.includes("fakepath")) {
+  //     item.optionImage = item.questionImage.replace(/^.*\\/, "");
+  //   }
+  // }
+
+  onAddHobby() {
+      const Questions = new FormGroup({
       'name': new FormControl(null, Validators.required),
       'includeImage': new FormControl(false),
       'questionImage': new FormControl(null),
@@ -153,49 +154,42 @@ export class AddTestComponent implements OnInit {
       'timeLimit': new FormControl(60),
       'isActive': new FormControl(true),
       'marks': new FormControl(5),
+        "questionType":  new FormGroup({
+          'questionTypeCode': new FormControl('MCQ'),
+          'name': new FormControl('Multiple Choice Questions'),
+        }),
       'solution': new FormControl(null),
       'solutionImg': new FormControl(null),
       'options': new FormArray([
         new FormGroup({
           'name': new FormControl(null, Validators.required),
           'isAnswer': new FormControl(false),
-          'optionimg': new FormControl(null),
+          'optionImage': new FormControl(null),
         }),
         new FormGroup({
           'name': new FormControl(null, Validators.required),
           'isAnswer': new FormControl(false),
-          'optionimg': new FormControl(null),
+          'optionImage': new FormControl(null),
         }),
         new FormGroup({
           'name': new FormControl(null, Validators.required),
           'isAnswer': new FormControl(false),
-          'optionimg': new FormControl(null),
+          'optionImage': new FormControl(null),
         }),
         new FormGroup({
           'name': new FormControl(null, Validators.required),
           'isAnswer': new FormControl(false),
-          'optionimg': new FormControl(null),
+          'optionImage': new FormControl(null),
         })
         ])
     });
     (<FormArray>this.signUpForm.get('questions')).push(Questions);
-
-  //this.addOptions()
   }
-  addOptions() {
-    const AnsOptions = new FormGroup({
-      'option': new FormControl(null, Validators.required),
-      'optionis': new FormControl(false),
-      'optionimg': new FormControl(null),
-    });
-    console.log("hiiii");
-    (<FormArray>this.signUpForm.get('questions')).push(AnsOptions)
-}
 
   selectFile(event) {
     this.selectedFiles = event.target.files;
     const file = this.selectedFiles.item(0);
-    this.uploadService.uploadfile(file);
+    this.uploadService.uploadfile(file, this.testCode);
     alert(this.selectedFiles)
   }
 

@@ -4,6 +4,7 @@ export class Option {
     name: string;
     answer: boolean;
     selected: boolean;
+  optionImage: string;
 
     constructor(data: any) {
         data = data || {};
@@ -11,5 +12,6 @@ export class Option {
         this.questionId = data.questionId;
         this.name = data.name;
         this.answer = data.answer;
+        this.optionImage =  data.optionImage;
     }
 }

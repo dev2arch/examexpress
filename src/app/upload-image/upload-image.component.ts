@@ -13,10 +13,10 @@ export class UploadImageComponent implements OnInit {
   ngOnInit() {
   }
 
-  upload() {
-    const file = this.selectedFiles.item(0);
-    this.uploadService.uploadfile(file);
-  }
+  // upload() {
+  //   const file = this.selectedFiles.item(0);
+  //   this.uploadService.uploadfile(file);
+  // }
 
   selectFile(event) {
     this.selectedFiles = event.target.files;

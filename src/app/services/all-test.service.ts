@@ -55,8 +55,25 @@ export class AllTestService {
         error => console.log(error, "error in adding Test")
       )
   }
+
+  public addqArray(qArray, testCode) {
+     var url = AppConfig.API_ENDPOINT + '/quizzard/test/' + "testing006" +'/questions'
+    // var url = AppConfig.API_ENDPOINT + '/quizzard/test/' + testCode + '/questions'
+    // let fileList: FileList = event.target.files;
+    // if (fileList.length > 0) {
+      // let file: File = fileList[0];
+      let formData: FormData = new FormData();
+      formData.append('qArray', JSON.stringify(qArray));
+      let headers = new Headers();
+      headers.append('Authorization', AppConfig.CURR_USER.token);
+      return this.http.post(url, formData, {headers})
+        .map(res => {res, console.log(res)})
+        .catch(error => Observable.throw(error))
+    // }
+  }
+
   public addQuestionstemp(event, testCode) {
-    var url = AppConfig.API_ENDPOINT + '/quizzard/test/' + testCode +'/questions'
+    var url = AppConfig.API_ENDPOINT + '/quizzard/test/' + testCode + '/questions'
     // var url = AppConfig.API_ENDPOINT + '/quizzard/test/' + "testing006" +'/questions'
     let fileList: FileList = event.target.files;
     if (fileList.length > 0) {

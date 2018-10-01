@@ -6,11 +6,11 @@ import * as S3 from 'aws-sdk/clients/s3';
 export class UploadQuestionImageService {
   FOLDER = 'question-images/img001/';
   constructor() { }
-  uploadfile(file) {
+  uploadfile(file, testCode) {
     console.log(file)
     var filename = file.name;
-    var testSubFolder =  filename.split('.').slice(0, -1).join('.')
-    this.FOLDER = 'question-images/' + testSubFolder + '/'
+    // var testSubFolder =  filename.split('.').slice(0, -1).join('.')
+    this.FOLDER = 'question-images/' + testCode + '/'
 
     const bucket = new S3(
       {
