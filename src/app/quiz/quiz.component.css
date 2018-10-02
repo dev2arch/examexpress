@@ -37,3 +37,67 @@
 	border-style: solid;
 	border-color: #999 #999 #999 transparent;
 }
+.img-question{
+  max-height: 135px;
+  max-width: 600px;
+}
+.img-option{
+  max-height: 135px;
+  max-width: 300px;
+}
+.row.content {height: 90vh}
+
+/* Set gray background color and 100% height */
+.sidenav {
+  background-color: #d3f0ffed;
+  height: 100%;
+}
+.btn-success {
+  color: #fff;
+  background-color: #41aba1d1;
+  border-color: #83c184;
+}
+.btn-default {
+  color: #fff;
+  background-color: rgba(22, 146, 171, 0.82);
+  border-color: #2c74c1;
+}
+span.badge{
+  min-width: 3rem;
+  padding: 0 6px;
+  margin-left: 4px;
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 22px;
+  height: 22px;
+  color: #f5f5f5;
+  float: unset;
+  box-sizing: border-box;
+}
+.badge-success{
+  background: green;
+}
+.badge-danger{
+  background: red;
+}
+/* Set black background color, white text and some padding */
+footer {
+  /* background-color: #55555512; */
+  color: white;
+  padding: 17px 15px 10px 15px;
+  width: 83.333333%;
+  position: absolute;
+  z-index: 999;
+  border-bottom: 1px solid #e8e8e8;
+}
+.container-fluid{
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 15px;
+  }
+  .row.content {height: auto;}
+}

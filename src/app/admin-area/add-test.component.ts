@@ -118,32 +118,29 @@ export class AddTestComponent implements OnInit {
     console.log(form.value)
   }
   formSubmitted() {
-    console.log(this.signUpForm.value.questions);
+    //console.log(this.signUpForm.value.questions);
     let arr = this.signUpForm.value.questions;
-    const id = "fakepath";
-    arr.forEach(this.setQuestionImagePath)
+    arr.forEach(this.setImagePath)
      console.log(arr)
-    // var qArray = this.signUpForm.value.questions;
-    // this.testService.addqArray(qArray, this.testCode)
-    //   .subscribe(
-    //     (res) => console.log(res),
-    //     (err) => console.log(err)
-    //   )
-
-
+    this.testService.addqArray(arr, this.testCode)
+      .subscribe(
+        (res) => console.log(res),
+        (err) => console.log(err)
+      )
   }
-  setQuestionImagePath(item, index) {
+  setImagePath(item, index) {
     console.log(item.questionImage)
-
-    item.questionImage = item.questionImage.replace(/^.*\\/, "");
-    // item.options.forEach(this.setOptionImagePath)
-
+    if(item.questionImage !== null) {
+      item.questionImage = item.questionImage.replace(/^.*\\/, "");
+    }
+     //console.log(item.options)
+      item.options.forEach(function (options) {
+        if (options.optionImage !== null) {
+          console.log(item.optionImage)
+          options.optionImage = options.optionImage.replace(/^.*\\/, "");
+        }
+      })
   }
-  // setOptionImagePath(item, index) {
-  //   if (item.optionImage.includes("fakepath")) {
-  //     item.optionImage = item.questionImage.replace(/^.*\\/, "");
-  //   }
-  // }
 
   onAddHobby() {
       const Questions = new FormGroup({

@@ -4,6 +4,7 @@ import { QuizService } from '../services/quiz.service';
 import { HelperService } from '../services/helper.service';
 import { Option, Question, Quiz, QuizConfig } from '../models/index';
 import {ActivatedRoute} from '@angular/router';
+import {AppConfig} from "../app.config";
 
 @Component({
   selector: 'app-quiz',
@@ -12,6 +13,7 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class QuizComponent implements OnInit {
   quizes: any[];
+  imgPath:string
   quiz: Quiz = new Quiz(null);
   mode: string = 'quiz';
   quizName: string;
@@ -39,6 +41,7 @@ export class QuizComponent implements OnInit {
 
   constructor(private quizService: QuizService, private activatedRoutes: ActivatedRoute) {
     this.quizName = this.activatedRoutes.snapshot.params['id']
+    this.imgPath = AppConfig.IMG_ENDPOINT+this.quizName;
 
   }
 

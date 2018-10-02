@@ -57,11 +57,8 @@ export class AllTestService {
   }
 
   public addqArray(qArray, testCode) {
-     var url = AppConfig.API_ENDPOINT + '/quizzard/test/' + "testing006" +'/questions'
-    // var url = AppConfig.API_ENDPOINT + '/quizzard/test/' + testCode + '/questions'
-    // let fileList: FileList = event.target.files;
-    // if (fileList.length > 0) {
-      // let file: File = fileList[0];
+    // var url = AppConfig.API_ENDPOINT + '/quizzard/test/' + "testing006" +'/questions'
+     var url = AppConfig.API_ENDPOINT + '/quizzard/test/' + testCode + '/questions'
       let formData: FormData = new FormData();
       formData.append('qArray', JSON.stringify(qArray));
       let headers = new Headers();
@@ -69,7 +66,6 @@ export class AllTestService {
       return this.http.post(url, formData, {headers})
         .map(res => {res, console.log(res)})
         .catch(error => Observable.throw(error))
-    // }
   }
 
   public addQuestionstemp(event, testCode) {
