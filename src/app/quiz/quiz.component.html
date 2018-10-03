@@ -114,10 +114,37 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-2 col-md-2 sidenav">
-        <div class="row review"  class="col-md-12" *ngIf="mode!='result'">
+      <div class="col-sm-2 col-md-2 sidenav"  >
+        <div class="row review"  class="col-md-12 no-padding" *ngIf="mode!='result'">
+          <div class="col-sm-12 col-md-12 no-padding" style="border-bottom: 1px solid #d6d6d6">
+            <div class="col-xs-6 no-padding">
+            <div class="col-sm-2 no-padding">
+            <div class="answered">?</div>
+            </div>
+              <div class="col-sm-3 no-padding">
+             <span style="text-align:center;font-size: smaller;margin-left: 10px">answered</span>
+              </div>
+          </div>
+            <div class="col-xs-6 no-padding">
+              <div class="col-sm-2 no-padding">
+                <div class="not-answered">?</div>
+              </div>
+              <div class="col-sm-4 no-padding" style="margin-left: 10px">
+                <span style="text-align: center;font-size: smaller;line-height: 0; margin-top: 13px; position: absolute;width: 90px;">not answered</span>
+              </div>
+            </div>
+            <div class="col-xs-6 no-padding">
+              <div class="col-sm-2 no-padding">
+                <div class="marked-review">?</div>
+              </div>
+              <div class="col-sm-3 no-padding">
+                <span style="text-align:center;font-size: smaller;margin-left: 10px">marked</span>
+              </div>
+            </div>
+          </div>
+
           <div class="col-sm-4" *ngFor="let question of quiz.questions; let index = index;">
-            <div (click)="goTo(index)" class="{{ isAnswered(index) == 'Answered'? 'answered': 'not-answered' }}">{{index + 1}}. {{ isAnswered(index) }}</div>
+            <div (click)="goTo(index)" class="{{ isAnswered(index) == 'Answered'? 'answered': 'not-answered' }}">{{index + 1}}</div>
           </div>
         </div>
         <div class="col-md-12 col-sm-12" style="width: 100%; position: absolute;left: 0; bottom: 18px;"><button class="btn btn-success" (click)="onSubmit();" style="width:100%" > Submit Quiz</button></div>

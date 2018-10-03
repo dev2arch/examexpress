@@ -38,11 +38,11 @@
 	border-color: #999 #999 #999 transparent;
 }
 .img-question{
-  max-height: 135px;
+  max-height: 95px;
   max-width: 600px;
 }
 .img-option{
-  max-height: 135px;
+  max-height: 85px;
   max-width: 300px;
 }
 .row.content {height: 90vh}
@@ -92,6 +92,35 @@ footer {
 }
 .container-fluid{
 }
+
+.marked-review {
+  background-color: #ffcccc;
+  border: 1px solid #eeaaaa;
+  margin: 2px 0;
+  padding: 3px 14px 2px 5px;
+   border-radius: 1px;
+  text-align: center;
+  font-size: 14px;
+  border-top-right-radius: 40%;
+}
+.answered {
+  background-color: #2fc45f;
+  border: 1px solid #008156;
+  margin: 2px 0;
+  padding: 3px 14px 2px 5px;
+   border-radius: 1px;
+  text-align: center;
+  font-size: 14px;
+  border-top-right-radius: 40%;
+}
+.not-answered {
+  background-color: #ffffff;
+  border: 1px solid #dadada;
+  margin: 2px 0;
+  padding: 3px 14px 2px 5px;
+   border-radius: 1px;
+  text-align: center;
+  font-size: 14px;}
 
 /* On small screens, set height to 'auto' for sidenav and grid */
 @media screen and (max-width: 767px) {
