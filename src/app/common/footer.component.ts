@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../services/auth.service';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-footer',
@@ -8,7 +9,8 @@ import {AuthService} from '../services/auth.service';
 })
 export class FooterComponent implements OnInit {
   role = localStorage.getItem('role');
-  constructor(public authService: AuthService) { }
+  isTest: any;
+  constructor(public authService: AuthService, private activatedRoutes: ActivatedRoute) { }
 
   ngOnInit() {
     this.authService.role.subscribe
@@ -16,6 +18,10 @@ export class FooterComponent implements OnInit {
       this.role = updatedrole;
       // alert("in sbscription role is >>>" + this.role)
     });
+    this.activatedRoutes.queryParams
+      .subscribe(
+        (val) => {this.isTest = val}
+      )
   }
 
 }

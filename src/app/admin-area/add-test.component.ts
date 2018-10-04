@@ -26,8 +26,8 @@ export class AddTestComponent implements OnInit {
 
   constructor(private testService:  AllTestService, private uploadService: UploadQuestionImageService) {
     this.optionType = 'text';
-    this.noOfQuestion = 2;
-    this.numbers = Array(this.noOfQuestion).fill(0).map((x, i) => i);
+    // this.noOfQuestion = 2;
+    // this.numbers = Array(this.noOfQuestion).fill(0).map((x, i) => i);
   }
 
   ngOnInit() {
@@ -37,14 +37,19 @@ export class AddTestComponent implements OnInit {
       ])
     });
 
-    for (var i = 0; i < this.noOfQuestion; i++){
-      this.onAddHobby();
-    }
+    // for (var i = 0; i < this.noOfQuestion; i++){
+    //   this.onAddHobby();
+    // }
 
   }
 
   public addTestDetails(testDetails: NgForm) {
     this.testCode = testDetails.value.testCode;
+    this.noOfQuestion = testDetails.value.testtotalQuestions;
+    this.numbers = Array(this.noOfQuestion).fill(0).map((x, i) => i);
+    alert(this.noOfQuestion)
+    console.log(this.numbers)
+
     console.log(testDetails.value)
     var today = new Date();
     var dd = today.getDate();
@@ -104,7 +109,11 @@ export class AddTestComponent implements OnInit {
       document.getElementById("questions").classList.add("active");
       document.getElementById("questions").classList.remove("fade");
 
-    }
+      for (var i = 0; i < this.noOfQuestion; i++){
+        this.onAddHobby();
+      }
+
+  }
 
    fileChangetemp(event) {
     this.testService.addQuestionstemp(event, this.testCode)

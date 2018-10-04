@@ -90,9 +90,9 @@
   <div class="container-fluid" *ngIf="mode !=='result'">
     <div class="row content">
 
-      <div class="col-sm-10" style="margin-top:50px">
-        <div *ngIf="mode=='quiz' && quiz">
-          <div *ngFor="let question of filteredQuestions;">
+      <div class="col-sm-10" style="margin-top:50px; height:100%">
+        <div *ngIf="mode=='quiz' && quiz" style="height: 100%">
+          <div *ngFor="let question of filteredQuestions;" style="height: 100%">
             <!--<div class="badge badge-info">Question {{pager.index + 1}} of {{pager.count}}.</div>-->
             <h3> <span [innerHTML]="question.name"></span></h3>
             <div *ngIf="question.questionImg !== null"><img class="img-question responsive-img" src="{{imgPath}}/{{question.questionImg}}" ></div>
@@ -111,6 +111,7 @@
                 </div>
               </div>
             </div>
+            <div><button class="btn btn-default" style="position: absolute; bottom: -19px ; z-index: 999" (click)="markedForLater(pager.index + 1, question );">Mark for Review & Next</button></div>
           </div>
         </div>
       </div>
@@ -143,17 +144,20 @@
             </div>
           </div>
 
-          <div class="col-sm-4" *ngFor="let question of quiz.questions; let index = index;">
-            <div (click)="goTo(index)" class="{{ isAnswered(index) == 'Answered'? 'answered': 'not-answered' }}">{{index + 1}}</div>
+          <div class="col-xs-3" *ngFor="let question of quiz.questions; let index = index;">
+
+            <div *ngIf="question.marked" (click)="goTo(index)" class="{{ ismarked(index) == 'Marked'? 'marked-review': 'not-answered' }}">{{index + 1}}</div>
+            <div *ngIf="!question.marked"(click)="goTo(index)" class="{{ isAnswered(index) == 'Answered'? 'answered': 'not-answered' }}">{{index + 1}}</div>
+
           </div>
         </div>
-        <div class="col-md-12 col-sm-12" style="width: 100%; position: absolute;left: 0; bottom: 18px;"><button class="btn btn-success" (click)="onSubmit();" style="width:100%" > Submit Quiz</button></div>
+        <div class="col-md-12 col-sm-12 col-xs-3" style="position: absolute;left: 0; bottom: 5px;"><button class=" col-xs-3 btn btn-success" (click)="onSubmit();" style="width:100%" > Submit Quiz</button></div>
       </div>
-      <div class="text-sm-center col-md-12 col-sm-12" style="width: 83.3333%; position: absolute;left: 0; bottom: 14px; padding-top: 15px; border-top:1px solid #e6e6e6" >
+      <div class="text-sm-center col-md-12 col-sm-12" style="width: 83.3333%; position: absolute;left: 0; bottom: 0px; padding-top: 45px; border-top:1px solid #e6e6e6" >
         <!--<button class="btn btn-default" *ngIf="config.allowBack" (click)="goTo(0);">First</button>-->
         <!--<button class="btn btn-default" *ngIf="config.allowBack" (click)="goTo(pager.index - 1);">Prev</button>-->
-        <button class="btn btn-default" (click)="goTo(pager.index + 1);">Mark for Review & Next</button>
-        <button class="btn btn-success" (click)="goTo(pager.index + 1);" style="position: absolute; right:10px">Save & Next</button>
+        <!--<button class="btn btn-default" (click)="markedForLater(pager.index + 1);">Mark for Review & Next</button>-->
+        <button class="btn btn-success" (click)="goTo(pager.index + 1);" style="position: absolute; right:10px; bottom: 5px">Save & Next</button>
         <!--<button class="btn btn-default" *ngIf="config.allowBack" (click)="goTo(pager.count - 1);" style="position: absolute; right: 18%">Last</button>-->
         <!--<button class="btn btn-default" (click)="onSubmit();">Submit Quiz</button>-->
         <!--<pagination *ngIf="config.showPager" direction-links="false" total-items="totalItems" items-per-page="itemsPerPage" ng-model="currentPage" ng-change="pageChanged()"></pagination>-->
@@ -161,6 +165,10 @@
     </div>
   </div>
   <div class="result" *ngIf="mode=='result'" calss="col-md-12">
+    <div class="col-md-6" style="position:fixed;">
+      <h2>Quiz Summary</h2>
+    </div>
+    <div class="col-md-6 col-md-push-6">
     <h2>Quiz Result</h2>
     <div *ngFor="let question of quiz.questions; let index = index">
       <div class="result-question">
@@ -180,4 +188,6 @@
     </div>
     <h4 class="alert alert-info text-sm-center">You may close this window now.</h4>
   </div>
+  </div>
+
 </section>

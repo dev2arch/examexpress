@@ -12,7 +12,7 @@ export class QuizService {
   get(testID: string) {
     var headers = new Headers();
     var url = AppConfig.API_ENDPOINT + "/quizzard/test/"+testID+"?includeQuestions=true"
-    alert(url)
+    // alert(url)
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', AppConfig.CURR_USER.token);
     console.log("quiz called")

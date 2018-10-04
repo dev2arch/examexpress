@@ -48,14 +48,14 @@ export class QuizComponent implements OnInit {
   ngOnInit() {
     this.quizes = this.quizService.getAll();
     this.loadQuiz(this.quizName);
-    alert(status);
+    // alert(status);
   }
 
   loadQuiz(quizName: string) {
     this.quizService.get(quizName)
     .subscribe(res => {
       this.quiz = new Quiz(res);
-      this.pager.count = this.quiz.questions.length; console.log(this.quiz)
+      this.pager.count = this.quiz.questions.length; console.log("quiz>>>>>>", this.quiz)
     });
   }
 
@@ -72,9 +72,21 @@ export class QuizComponent implements OnInit {
     if (this.config.autoMove) {
       this.goTo(this.pager.index + 1);
     }
+
+    if (question.marked) {
+      question.marked = false
+    }
   }
 
   goTo(index: number) {
+    if (index >= 0 && index < this.pager.count) {
+      this.pager.index = index;
+      this.mode = 'quiz';
+    }
+  }
+  markedForLater(index: number, question ) {
+    question.marked = true;
+    console.log(question)
     if (index >= 0 && index < this.pager.count) {
       this.pager.index = index;
       this.mode = 'quiz';
@@ -84,6 +96,13 @@ export class QuizComponent implements OnInit {
   isAnswered(index) {
     return this.quiz.questions[index].options.find(x => x.selected) ? 'Answered' : 'Not Answered';
   };
+  ismarked(index) {
+     return this.quiz.questions[index].marked === true ? 'Marked' : 'Not Answered';
+  };
+  check(e) {
+    alert("hi")
+    console.log(e)
+  }
 
   isCorrect(question: Question) {
     return question.options.every(x => x.selected === x.answer) ? 'correct' : 'wrong';

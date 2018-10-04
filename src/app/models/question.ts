@@ -8,11 +8,13 @@ export class Question {
     options: Option[];
     answered: boolean;
     questionImg: string;
+    marked: boolean;
 
     constructor(data: any) {
         data = data || {};
         this.name = data.name;
         this.id = data.id;
+        this.marked = false;
         this.questionTypeId = data.questionTypeId;
         this.questionTypeCode = data.questionType.questionTypeCode;
         this.questionImg = data.questionImage;
