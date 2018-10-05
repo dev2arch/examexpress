@@ -42,6 +42,7 @@ import {TestDataService} from "./services/test-data.service";
 import { CourseSubcatComponent } from './category/course-subcat.component';
 import {UploadQuestionImageService} from "./services/upload-question-image.service";
 import { UploadImageComponent } from './upload-image/upload-image.component';
+import { TimerComponent } from './timer/timer.component';
 
 
 @NgModule({
@@ -71,6 +72,7 @@ import { UploadImageComponent } from './upload-image/upload-image.component';
     AdminDashboardComponent,
     CourseSubcatComponent,
     UploadImageComponent,
+    TimerComponent,
   ],
   imports: [
     BrowserModule,

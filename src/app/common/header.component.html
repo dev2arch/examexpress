@@ -98,6 +98,12 @@
                             <li *ngFor='let menu of menuObj.menu'><a routerLink = {{menu.link}} >{{menu.name}}</a></li>
                         </ul>
                     </div>
+                  <div class="main-menu" *ngIf="istest.mode == 'liveTest'">
+                    <ul>
+                      <li><app-timer></app-timer></li>
+                    </ul>
+                  </div>
+
                 </div>
                 <div class="all-drop-down-menu"></div>
               </div>
