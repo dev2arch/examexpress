@@ -84,9 +84,10 @@ export class QuizComponent implements OnInit {
       this.mode = 'quiz';
     }
   }
-  markedForLater(index: number, question ) {
-    question.marked = true;
-    console.log(question)
+  markedForLater(index: number ) {
+    // question.marked = true;
+    this.quiz.questions[index - 1].marked = true;
+    console.log(this.quiz.questions[index])
     if (index >= 0 && index < this.pager.count) {
       this.pager.index = index;
       this.mode = 'quiz';
